@@ -44,6 +44,14 @@ header {
 
 .main-nav {
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0 -20px;
+    padding: 15px 20px;
+    border-radius: 15px;
 }
 
 .logo a {
@@ -94,16 +102,102 @@ header {
 
 .hamburger {
     display: none;
-    flex-direction: column;
-    gap: 6px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background-color: rgba(26, 26, 26, 0.9);
+    border-radius: 8px;
 }
 
 .hamburger span {
+    display: block;
     width: 25px;
     height: 2px;
-    background: var(--text-color);
-    transition: 0.3s;
+    margin: 6px 0;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Mobile navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 80px 20px 20px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav .nav-links a {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+}
+
+.mobile-nav .nav-links a:hover {
+    color: #9B0000;
+}
+
+/* Overlay pre mobile menu */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    display: block;
+}
+
+/* Hamburger animácia */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Hero section with navigation */
@@ -111,33 +205,47 @@ header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/hero/heroDarker3.png');
     background-size: cover;
     background-position: center;
-    min-height: 500px; /* Increased to accommodate the search form */
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     margin: 20px;
     border-radius: 15px;
     position: relative;
-    z-index: 1;
 }
 
 /* Hero content */
 .hero-content {
     text-align: center;
     padding-top: 80px;
-    padding-bottom: 100px; /* Added more padding at bottom for search form overlap */
+    padding-bottom: 100px;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #ffffff;
+    background: linear-gradient(to bottom, #ffffff 30%, #666666 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    background-size: 1em 100%;
+    line-height: 1.2;
+    padding: 0.1em 0;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #cccccc;
+    background: linear-gradient(to bottom, #dddddd 20%, #444444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    background-size: 1em 100%;
+    line-height: 1.3;
+    padding: 0.1em 0;
 }
 
 /* Buttons */
@@ -150,29 +258,59 @@ header {
     transition: all 0.3s;
     cursor: pointer;
     border: none;
+    color: #ffffff;
 }
 
 .btn-primary {
-    background-color: #9B0000;
-    color: #ffffff;
+    background: linear-gradient(45deg, #9B0000, #ff4d4d);
+    background-size: 200% auto;
+    transition: all 0.3s ease;
+    -webkit-text-fill-color: #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #6B0000;
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 0, 0, 0.3);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background: transparent;
     color: #ffffff;
     border: 2px solid #9B0000;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    -webkit-text-fill-color: #ffffff;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #9B0000, #ff4d4d);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn-secondary:hover::before {
+    width: 100%;
 }
 
 .btn-secondary:hover {
-    background-color: #9B0000;
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 0, 0, 0.3);
 }
 
 /* Vyhľadávací formulár */
 .search-section {
+    position: static;
+    z-index: 1;
 }
 
 .search-form {
@@ -184,8 +322,7 @@ header {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(-100px);
-    position: relative;
-    z-index: 10;
+    position: static;
 }
 
 .form-group {
@@ -418,54 +555,103 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    
     .hamburger {
         display: block;
     }
 
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .cta-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .btn-secondary {
-        margin-left: 0;
-    }
-
-    .search-section {
-        transform: translateY(-30%);
-        margin-bottom: -20px;
-    }
-
-    .search-form {
-        padding: 20px;
-        margin: 0 10px;
+    .main-nav .nav-links {
+        display: none;
     }
 
     .hero {
-        min-height: 600px;
+        margin: 0 10px;
+        padding: 80px 15px 15px; /* Increased top padding for fixed navbar */
+        min-height: 400px;
     }
 
     .hero-content {
-        padding-bottom: 150px;
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
-    section h2 {
-        font-size: 2rem;
+    .mobile-nav {
+        display: block;
+    }
+
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    .mobile-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    .search-form {
+        transform: translateY(-50px);
+        margin: 0 10px;
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .search-btn {
+        margin-top: 10px;
+    }
+
+    /* Upravené rozloženie pre mobilné zariadenia */
+    .container {
+        padding: 0 15px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+/* Menšie mobilné zariadenia */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .search-form {
+        padding: 15px;
+    }
+
+    .mobile-nav {
+        width: 100%;
+        right: -100%;
     }
 }
 
@@ -499,4 +685,19 @@ footer {
     50% {
         transform: translateY(-20px);
     }
+}
+
+/* Hero buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.cta-buttons .btn {
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
 } 

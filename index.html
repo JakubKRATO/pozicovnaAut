@@ -10,15 +10,37 @@
 <body>
     <!-- Hero section with navigation -->
     <section class="hero">
+        <!-- Hamburger menu -->
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Desktop navigation -->
         <nav class="main-nav">
             <ul class="nav-links">
-                <li><a href="/">Domov</a></li>
+                <li><a href="/" class="active">Domov</a></li>
                 <li><a href="/onas">O nás</a></li>
                 <li><a href="/vozidla">Rezervácia</a></li>
                 <li><a href="/faq">FAQ</a></li>
                 <li><a href="/kontakt">Kontakt</a></li>
             </ul>
         </nav>
+
+        <!-- Mobile navigation -->
+        <nav class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="/" class="active">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-overlay"></div>
         
         <div class="hero-content">
             <h1>Spoľahlivý prenájom áut<br>za férové ceny</h1>
@@ -127,5 +149,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/navigation.js"></script>
 </body>
 </html> 
