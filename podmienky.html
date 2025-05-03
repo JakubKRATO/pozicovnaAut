@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podmienky prenájmu - AutoRent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/conditions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header s navigáciou (rovnaký ako v index.html) -->
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">AutoRent</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="vozidla.html">Vozidlá</a></li>
+                <li><a href="onas.html">O nás</a></li>
+                <li><a href="podmienky.html" class="active">Podmienky</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li class="lang-switch">
+                    <a href="#" class="active">SK</a>
+                    <a href="#">EN</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hlavička stránky -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Podmienky prenájmu</h1>
+            <p>Všetko, čo potrebujete vedieť o prenájme vozidla</p>
+        </div>
+    </section>
+
+    <!-- Hlavné podmienky -->
+    <section class="main-conditions">
+        <div class="container">
+            <div class="conditions-grid">
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Požiadavky na vodiča</h3>
+                    <ul>
+                        <li>Minimálny vek 21 rokov</li>
+                        <li>Vodičský preukaz platný min. 2 roky</li>
+                        <li>Občiansky preukaz alebo pas</li>
+                        <li>Kreditná karta na kauciu</li>
+                    </ul>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Platobné podmienky</h3>
+                    <ul>
+                        <li>Platba vopred pri rezervácii</li>
+                        <li>Kaucia 500-1000 € (podľa typu vozidla)</li>
+                        <li>Akceptujeme karty a hotovosť</li>
+                        <li>Možnosť firemnej fakturácie</li>
+                    </ul>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Palivová politika</h3>
+                    <ul>
+                        <li>Vozidlo s plnou nádržou</li>
+                        <li>Vrátenie s plnou nádržou</li>
+                        <li>Poplatok za dotankovanie</li>
+                        <li>Evidencia stavu paliva</li>
+                    </ul>
+                </div>
+
+                <div class="condition-card">
+                    <div class="condition-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Doba prenájmu</h3>
+                    <ul>
+                        <li>Minimálne 24 hodín</li>
+                        <li>Flexibilné predĺženie</li>
+                        <li>Včasné vrátenie</li>
+                        <li>Poplatok za meškanie</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailné podmienky -->
+    <section class="detailed-conditions">
+        <div class="container">
+            <div class="conditions-tabs">
+                <button class="tab-button active" data-tab="insurance">Poistenie</button>
+                <button class="tab-button" data-tab="damage">Škody a nehody</button>
+                <button class="tab-button" data-tab="reservation">Rezervácia a storno</button>
+                <button class="tab-button" data-tab="additional">Doplnkové služby</button>
+            </div>
+
+            <div class="tab-content active" id="insurance">
+                <h2>Poistenie vozidla</h2>
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h3>Základné poistenie (v cene)</h3>
+                        <ul>
+                            <li>Povinné zmluvné poistenie</li>
+                            <li>Havarijné poistenie so spoluúčasťou 5%</li>
+                            <li>Asistenčné služby 24/7</li>
+                            <li>Krytie základných rizík</li>
+                        </ul>
+                    </div>
+                    <div class="content-block">
+                        <h3>Rozšírené poistenie (voliteľné)</h3>
+                        <ul>
+                            <li>Nulová spoluúčasť</li>
+                            <li>Poistenie čelného skla</li>
+                            <li>Poistenie pneumatík</li>
+                            <li>Krytie všetkých rizík</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="damage">
+                <h2>Škody a nehody</h2>
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h3>Postup pri nehode</h3>
+                        <ol>
+                            <li>Zabezpečte miesto nehody</li>
+                            <li>Kontaktujte políciu (ak je potrebné)</li>
+                            <li>Zdokumentujte škody (fotky)</li>
+                            <li>Kontaktujte našu non-stop linku</li>
+                        </ol>
+                    </div>
+                    <div class="content-block">
+                        <h3>Zodpovednosť za škody</h3>
+                        <ul>
+                            <li>Spoluúčasť pri škode</li>
+                            <li>Náhrada za stratu dokladov</li>
+                            <li>Poškodenie interiéru</li>
+                            <li>Strata príslušenstva</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="reservation">
+                <h2>Rezervácia a storno podmienky</h2>
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h3>Rezervačný proces</h3>
+                        <ul>
+                            <li>Online rezervácia 24/7</li>
+                            <li>Telefonická rezervácia</li>
+                            <li>Potvrdenie dostupnosti</li>
+                            <li>Záloha pri rezervácii</li>
+                        </ul>
+                    </div>
+                    <div class="content-block">
+                        <h3>Storno podmienky</h3>
+                        <ul>
+                            <li>Bezplatné storno do 48h</li>
+                            <li>Storno poplatok 50% do 24h</li>
+                            <li>Storno poplatok 100% v deň prenájmu</li>
+                            <li>Zmena termínu bez poplatku</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="additional">
+                <h2>Doplnkové služby</h2>
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h3>Dostupné doplnky</h3>
+                        <ul>
+                            <li>GPS navigácia (5 €/deň)</li>
+                            <li>Detská sedačka (3 €/deň)</li>
+                            <li>Strešný nosič (7 €/deň)</li>
+                            <li>Wi-Fi router (4 €/deň)</li>
+                        </ul>
+                    </div>
+                    <div class="content-block">
+                        <h3>Nadštandardné služby</h3>
+                        <ul>
+                            <li>Pristavenie vozidla</li>
+                            <li>Vyzdvihnutie vozidla</li>
+                            <li>Dodatočný vodič</li>
+                            <li>Neobmedzené kilometre</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dokumenty na stiahnutie -->
+    <section class="documents">
+        <div class="container">
+            <h2>Dokumenty na stiahnutie</h2>
+            <div class="documents-grid">
+                <a href="docs/vseobecne-podmienky.pdf" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Všeobecné obchodné podmienky</h3>
+                    <p>PDF, 245 KB</p>
+                </a>
+                <a href="docs/najomna-zmluva.pdf" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Vzor nájomnej zmluvy</h3>
+                    <p>PDF, 180 KB</p>
+                </a>
+                <a href="docs/protokol.pdf" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Preberací protokol</h3>
+                    <p>PDF, 120 KB</p>
+                </a>
+                <a href="docs/cennik.pdf" class="document-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Cenník služieb</h3>
+                    <p>PDF, 150 KB</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (rovnaký ako v index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +421 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@autorent.sk</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hlavná 123, Bratislava</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rýchle odkazy</h4>
+                    <ul>
+                        <li><a href="vozidla.html">Naše vozidlá</a></li>
+                        <li><a href="podmienky.html">Podmienky prenájmu</a></li>
+                        <li><a href="faq.html">Časté otázky</a></li>
+                        <li><a href="kontakt.html">Kontaktujte nás</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sledujte nás</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoRent. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript pre tabs funkcionalitu -->
+    <script>
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 

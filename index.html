@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopožičovňa - Prenájom áut na Slovensku</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Hero section with navigation -->
+    <section class="hero">
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Spoľahlivý prenájom áut<br>za férové ceny</h1>
+            <div class="cta-buttons">
+                <a href="#rezervacia" class="btn btn-primary">Rezervovať auto</a>
+                <a href="/vozidla" class="btn btn-secondary">Prehliadať vozidlá</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vyhľadávací formulár -->
+    <section class="search-section" id="rezervacia">
+        <div class="container">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="location">Lokalita vyzdvihnutia</label>
+                    <select id="location" required>
+                        <option value="">Vyberte lokalitu</option>
+                        <option value="bratislava">Bratislava</option>
+                        <option value="kosice">Košice</option>
+                        <option value="zilina">Žilina</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-date">Dátum vyzdvihnutia</label>
+                    <input type="date" id="pickup-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-date">Dátum vrátenia</label>
+                    <input type="date" id="return-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="car-type">Typ vozidla</label>
+                    <select id="car-type" required>
+                        <option value="">Všetky typy</option>
+                        <option value="osobne">Osobné</option>
+                        <option value="suv">SUV</option>
+                        <option value="dodavky">Dodávky</option>
+                        <option value="luxusne">Luxusné</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Vyhľadať</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Výhody -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Prečo si vybrať našu autopožičovňu?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Nové vozidlá</h3>
+                    <p>Flotila moderných áut s priemerným vekom do 2 rokov</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Podpora</h3>
+                    <p>Non-stop zákaznícka podpora v slovenčine aj angličtine</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Výhodné ceny</h3>
+                    <p>Transparentné ceny bez skrytých poplatkov</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Poistenie v cene</h3>
+                    <p>Základné poistenie zahrnuté v cene prenájmu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +421 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@autorent.sk</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hlavná 123, Bratislava</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rýchle odkazy</h4>
+                    <ul>
+                        <li><a href="vozidla.html">Naše vozidlá</a></li>
+                        <li><a href="podmienky.html">Podmienky prenájmu</a></li>
+                        <li><a href="faq.html">Časté otázky</a></li>
+                        <li><a href="kontakt.html">Kontaktujte nás</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sledujte nás</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoRent. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naše vozidlá - AutoRent</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/vehicles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Hero section with navigation -->
+    <section class="hero">
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla" class="active">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Naše vozidlá</h1>
+            <p>Vyberte si z našej širokej ponuky kvalitných vozidiel</p>
+        </div>
+    </section>
+
+    <!-- Filtre -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="category">Kategória</label>
+                    <select id="category">
+                        <option value="">Všetky kategórie</option>
+                        <option value="osobne">Osobné vozidlá</option>
+                        <option value="suv">SUV</option>
+                        <option value="dodavky">Dodávky</option>
+                        <option value="luxusne">Luxusné vozidlá</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="transmission">Prevodovka</label>
+                    <select id="transmission">
+                        <option value="">Všetky typy</option>
+                        <option value="manual">Manuálna</option>
+                        <option value="auto">Automatická</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="fuel">Palivo</label>
+                    <select id="fuel">
+                        <option value="">Všetky typy</option>
+                        <option value="benzin">Benzín</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="elektro">Elektro</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price">Cena do</label>
+                    <select id="price">
+                        <option value="">Bez obmedzenia</option>
+                        <option value="30">do 30 €/deň</option>
+                        <option value="50">do 50 €/deň</option>
+                        <option value="100">do 100 €/deň</option>
+                        <option value="200">do 200 €/deň</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalóg vozidiel -->
+    <section class="vehicles">
+        <div class="container">
+            <div class="vehicles-grid">
+                <!-- Vozidlo 1 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="img/cars/skoda-octavia.jpg" alt="Škoda Octavia">
+                        <span class="category">Osobné</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Škoda Octavia</h3>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-cog"></i> Automatická</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-users"></i> 5 miest</span>
+                        </div>
+                        <div class="vehicle-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Klimatizácia</li>
+                                <li><i class="fas fa-check"></i> GPS navigácia</li>
+                                <li><i class="fas fa-check"></i> Parkovacie senzory</li>
+                            </ul>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">od 35 €/deň</span>
+                            <a href="#" class="btn btn-primary">Rezervovať</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vozidlo 2 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="img/cars/vw-tiguan.jpg" alt="VW Tiguan">
+                        <span class="category">SUV</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>VW Tiguan</h3>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-cog"></i> Automatická</span>
+                            <span><i class="fas fa-gas-pump"></i> Benzín</span>
+                            <span><i class="fas fa-users"></i> 5 miest</span>
+                        </div>
+                        <div class="vehicle-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 4x4 pohon</li>
+                                <li><i class="fas fa-check"></i> Vyhrievané sedadlá</li>
+                                <li><i class="fas fa-check"></i> Strešné okno</li>
+                            </ul>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">od 55 €/deň</span>
+                            <a href="#" class="btn btn-primary">Rezervovať</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vozidlo 3 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="img/cars/mercedes-vito.jpg" alt="Mercedes-Benz Vito">
+                        <span class="category">Dodávka</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Mercedes-Benz Vito</h3>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-cog"></i> Manuálna</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            <span><i class="fas fa-users"></i> 9 miest</span>
+                        </div>
+                        <div class="vehicle-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Veľký batožinový priestor</li>
+                                <li><i class="fas fa-check"></i> Bluetooth</li>
+                                <li><i class="fas fa-check"></i> Zadná parkovacia kamera</li>
+                            </ul>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">od 65 €/deň</span>
+                            <a href="#" class="btn btn-primary">Rezervovať</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vozidlo 4 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="img/cars/bmw-5.jpg" alt="BMW 5">
+                        <span class="category">Luxusné</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>BMW 5</h3>
+                        <div class="vehicle-features">
+                            <span><i class="fas fa-cog"></i> Automatická</span>
+                            <span><i class="fas fa-gas-pump"></i> Benzín</span>
+                            <span><i class="fas fa-users"></i> 5 miest</span>
+                        </div>
+                        <div class="vehicle-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Kožený interiér</li>
+                                <li><i class="fas fa-check"></i> Head-up display</li>
+                                <li><i class="fas fa-check"></i> Adaptívny tempomat</li>
+                            </ul>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">od 95 €/deň</span>
+                            <a href="#" class="btn btn-primary">Rezervovať</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (rovnaký ako v index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +421 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@autorent.sk</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hlavná 123, Bratislava</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rýchle odkazy</h4>
+                    <ul>
+                        <li><a href="vozidla.html">Naše vozidlá</a></li>
+                        <li><a href="podmienky.html">Podmienky prenájmu</a></li>
+                        <li><a href="faq.html">Časté otázky</a></li>
+                        <li><a href="kontakt.html">Kontaktujte nás</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sledujte nás</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoRent. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,253 @@
+/* Hlavička stránky */
+.page-header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* História */
+.history {
+    background-color: #1a1a1a;
+    padding: 80px 0;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.history-text h2 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.history-text p {
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+
+.history-text ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.history-text ul li {
+    margin-bottom: 10px;
+    color: #cccccc;
+    position: relative;
+    padding-left: 25px;
+}
+
+.history-text ul li:before {
+    content: "✓";
+    color: #9B0000;
+    position: absolute;
+    left: 0;
+}
+
+.history-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hodnoty */
+.values {
+    padding: 80px 0;
+}
+
+.values h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card i {
+    font-size: 2.5rem;
+    color: #9B0000;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: #cccccc;
+}
+
+/* Tím */
+.team {
+    background-color: #1a1a1a;
+    padding: 80px 0;
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #9B0000;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.team-member .position {
+    color: #9B0000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-member .description {
+    color: #cccccc;
+}
+
+/* Certifikáty */
+.certificates {
+    padding: 80px 0;
+}
+
+.certificates h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.certificate-card {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.certificate-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.certificate-card h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.certificate-card p {
+    color: #cccccc;
+}
+
+/* Partneri */
+.partners {
+    background-color: #1a1a1a;
+    padding: 80px 0;
+}
+
+.partners h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    align-items: center;
+}
+
+.partner-logo {
+    text-align: center;
+}
+
+.partner-logo img {
+    max-width: 150px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.partner-logo img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Responzívny dizajn */
+@media (max-width: 768px) {
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+
+    .history-image {
+        order: -1;
+    }
+
+    .member-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .values-grid,
+    .team-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+} 
