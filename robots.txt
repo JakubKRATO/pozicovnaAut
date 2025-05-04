@@ -1,0 +1,15 @@
+# www.autorent.sk robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://autorent.sk/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /cgi-bin/
+
+# Crawl delay
+Crawl-delay: 10 

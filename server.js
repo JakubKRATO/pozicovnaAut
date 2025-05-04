@@ -11,6 +11,15 @@ const PORT = process.env.PORT || 3500;
 // Serve static files from the static directory
 app.use(express.static(path.join(__dirname, 'static')));
 
+// Serve robots.txt and sitemap.xml
+app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+app.get('/sitemap.xml', (req, res) => {
+    res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
 // Serve HTML files from root directory
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
