@@ -11,6 +11,14 @@
 <body>
     <!-- Hero section with navigation -->
     <section class="hero">
+        <!-- Hamburger menu -->
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Desktop navigation -->
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="/">Domov</a></li>
@@ -20,9 +28,24 @@
                 <li><a href="/kontakt">Kontakt</a></li>
             </ul>
         </nav>
+
+        <!-- Mobile navigation -->
+        <nav class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla" class="active">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-overlay"></div>
         
         <div class="hero-content">
             <h1>Naše vozidlá</h1>
+            <br>
             <p>Vyberte si z našej širokej ponuky kvalitných vozidiel</p>
         </div>
     </section>
@@ -221,5 +244,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="/js/navigation.js"></script>
 </body>
 </html> 

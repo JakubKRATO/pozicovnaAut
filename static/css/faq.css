@@ -15,7 +15,7 @@
 /* FAQ sekcia */
 .faq-section {
     padding: 4rem 0;
-    background: var(--white);
+    background: #121212;
 }
 
 .faq-category {
@@ -23,7 +23,7 @@
 }
 
 .faq-category h2 {
-    color: var(--text-color);
+    color: #ffffff;
     font-size: 1.8rem;
     margin-bottom: 2rem;
     display: flex;
@@ -42,9 +42,11 @@
 }
 
 .faq-item {
-    background: var(--light-gray);
+    background: #1e1e1e;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .faq-question {
@@ -57,12 +59,12 @@
 }
 
 .faq-question:hover {
-    background-color: #e5e7eb;
+    background-color: #2a2a2a;
 }
 
 .faq-question h3 {
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: #ffffff;
     margin: 0;
 }
 
@@ -80,23 +82,25 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background: var(--white);
+    background: #1e1e1e;
+    color: #ffffff;
 }
 
 .faq-answer p {
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: #cccccc;
 }
 
 .faq-answer ul,
 .faq-answer ol {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
+    color: #cccccc;
 }
 
 .faq-answer li {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: #cccccc;
 }
 
 /* Animácie */
@@ -150,24 +154,24 @@
 
 .faq-item:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .faq-item.active {
-    box-shadow: var(--shadow);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .faq-item.active .faq-question {
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
 }
 
 .faq-item.active .faq-question h3 {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .faq-item.active .toggle-icon {
-    color: var(--white);
+    color: #ffffff;
 }
 
 /* Štýly pre zoznamy v odpovediach */

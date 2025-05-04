@@ -9,35 +9,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Header s navigáciou (rovnaký ako v index.html) -->
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <a href="index.html">AutoRent</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Domov</a></li>
-                <li><a href="vozidla.html">Vozidlá</a></li>
-                <li><a href="onas.html">O nás</a></li>
-                <li><a href="podmienky.html" class="active">Podmienky</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li class="lang-switch">
-                    <a href="#" class="active">SK</a>
-                    <a href="#">EN</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Hero section with navigation -->
+    <section class="hero">
+        <!-- Hamburger menu -->
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <!-- Hlavička stránky -->
-    <section class="page-header">
-        <div class="container">
+        <!-- Desktop navigation -->
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/podmienky" class="active">Podmienky</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile navigation -->
+        <nav class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/podmienky" class="active">Podmienky</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-overlay"></div>
+        
+        <div class="hero-content">
             <h1>Podmienky prenájmu</h1>
             <p>Všetko, čo potrebujete vedieť o prenájme vozidla</p>
         </div>
@@ -290,5 +298,7 @@
             });
         });
     </script>
+
+    <script src="/js/navigation.js"></script>
 </body>
 </html> 

@@ -1,7 +1,7 @@
 /* Hlavička stránky */
 .page-header {
     background: var(--primary-color);
-    color: var(--white);
+    color: #ffffff;
     padding: 4rem 0 2rem;
     margin-top: 70px;
     text-align: center;
@@ -15,7 +15,7 @@
 /* Kontaktné informácie */
 .contact-info {
     padding: 4rem 0;
-    background: var(--white);
+    background: #121212;
 }
 
 .contact-grid {
@@ -31,15 +31,18 @@
 }
 
 .contact-card {
-    background: var(--light-gray);
+    background: #1e1e1e;
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .contact-card i {
@@ -50,11 +53,11 @@
 
 .contact-card h3 {
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: #ffffff;
 }
 
 .contact-card p {
-    color: var(--text-color);
+    color: #cccccc;
     line-height: 1.6;
 }
 
@@ -62,20 +65,21 @@
 .map {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333333;
 }
 
 /* Kontaktný formulár */
 .contact-form {
     padding: 4rem 0;
-    background: var(--light-gray);
+    background: #121212;
 }
 
 .contact-form h2 {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2rem;
-    color: var(--text-color);
+    color: #ffffff;
 }
 
 .form-grid {
@@ -98,17 +102,26 @@
 
 .form-group label {
     font-weight: 500;
-    color: var(--text-color);
+    color: #ffffff;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     padding: 0.8rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #333333;
     border-radius: 4px;
     font-size: 1rem;
-    background: var(--white);
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(155, 0, 0, 0.2);
 }
 
 .form-group textarea {
@@ -126,6 +139,7 @@
     user-select: none;
     position: relative;
     padding-left: 30px;
+    color: #ffffff;
 }
 
 .checkbox-container input {
@@ -141,13 +155,13 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
     border-radius: 4px;
 }
 
 .checkbox-container:hover input ~ .checkmark {
-    background-color: var(--light-gray);
+    background-color: #2a2a2a;
 }
 
 .checkbox-container input:checked ~ .checkmark {

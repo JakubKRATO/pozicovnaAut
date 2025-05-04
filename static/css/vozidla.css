@@ -14,15 +14,15 @@
 
 /* Filtre */
 .filters {
-    background: var(--white);
     padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
+    background: #121212;
 }
 
 .filter-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .filter-group {
@@ -32,23 +32,29 @@
 }
 
 .filter-group label {
+    color: #ffffff;
     font-weight: 500;
-    color: var(--text-color);
 }
 
 .filter-group select {
     padding: 0.8rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid #333333;
     border-radius: 4px;
-    font-size: 1rem;
-    background: var(--white);
+    background: #1e1e1e;
+    color: #ffffff;
     cursor: pointer;
+}
+
+.filter-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(155, 0, 0, 0.2);
 }
 
 /* Katalóg vozidiel */
 .vehicles {
-    padding: 3rem 0;
-    background: var(--light-gray);
+    padding: 4rem 0;
+    background: #121212;
 }
 
 .vehicles-grid {
@@ -58,15 +64,17 @@
 }
 
 .vehicle-card {
-    background: var(--white);
+    background: #1e1e1e;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+    border: 1px solid #333333;
 }
 
 .vehicle-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .vehicle-image {
@@ -85,10 +93,10 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: var(--primary-color);
-    color: var(--white);
+    background: rgba(155, 0, 0, 0.9);
+    color: #ffffff;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: 0.9rem;
 }
 
@@ -97,9 +105,9 @@
 }
 
 .vehicle-info h3 {
-    font-size: 1.5rem;
+    color: #ffffff;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    font-size: 1.3rem;
 }
 
 .vehicle-features {
@@ -110,28 +118,31 @@
 }
 
 .vehicle-features span {
+    color: #cccccc;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-color);
 }
 
 .vehicle-features i {
     color: var(--primary-color);
 }
 
-.vehicle-details ul {
-    list-style: none;
+.vehicle-details {
     margin-bottom: 1.5rem;
 }
 
+.vehicle-details ul {
+    list-style: none;
+    color: #cccccc;
+}
+
 .vehicle-details li {
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
 }
 
 .vehicle-details i {
@@ -143,13 +154,13 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #333333;
 }
 
-.vehicle-price .price {
+.price {
+    color: #ffffff;
     font-size: 1.2rem;
     font-weight: bold;
-    color: var(--text-color);
 }
 
 /* Responzívny dizajn */
