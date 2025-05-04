@@ -50,49 +50,39 @@
         </div>
     </section>
 
-    <!-- Filtre -->
-    <section class="filters">
+    <!-- Vyhľadávací formulár -->
+    <section class="search-section">
         <div class="container">
-            <div class="filter-grid">
-                <div class="filter-group">
-                    <label for="category">Kategória</label>
-                    <select id="category">
-                        <option value="">Všetky kategórie</option>
-                        <option value="osobne">Osobné vozidlá</option>
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="location">Lokalita vyzdvihnutia</label>
+                    <select id="location" required>
+                        <option value="">Vyberte lokalitu</option>
+                        <option value="bratislava">Bratislava</option>
+                        <option value="kosice">Košice</option>
+                        <option value="zilina">Žilina</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-date">Dátum vyzdvihnutia</label>
+                    <input type="date" id="pickup-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-date">Dátum vrátenia</label>
+                    <input type="date" id="return-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="car-type">Typ vozidla</label>
+                    <select id="car-type" required>
+                        <option value="">Všetky typy</option>
+                        <option value="osobne">Osobné</option>
                         <option value="suv">SUV</option>
                         <option value="dodavky">Dodávky</option>
-                        <option value="luxusne">Luxusné vozidlá</option>
+                        <option value="luxusne">Luxusné</option>
                     </select>
                 </div>
-                <div class="filter-group">
-                    <label for="transmission">Prevodovka</label>
-                    <select id="transmission">
-                        <option value="">Všetky typy</option>
-                        <option value="manual">Manuálna</option>
-                        <option value="auto">Automatická</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="fuel">Palivo</label>
-                    <select id="fuel">
-                        <option value="">Všetky typy</option>
-                        <option value="benzin">Benzín</option>
-                        <option value="diesel">Diesel</option>
-                        <option value="hybrid">Hybrid</option>
-                        <option value="elektro">Elektro</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="price">Cena do</label>
-                    <select id="price">
-                        <option value="">Bez obmedzenia</option>
-                        <option value="30">do 30 €/deň</option>
-                        <option value="50">do 50 €/deň</option>
-                        <option value="100">do 100 €/deň</option>
-                        <option value="200">do 200 €/deň</option>
-                    </select>
-                </div>
-            </div>
+                <button type="submit" class="btn btn-primary">Vyhľadať</button>
+            </form>
         </div>
     </section>
 
