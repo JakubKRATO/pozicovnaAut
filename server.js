@@ -41,6 +41,14 @@ app.get('/kontakt', (req, res) => {
     res.sendFile(path.join(__dirname, 'kontakt.html'));
 });
 
+app.get('/rezervacia', (req, res) => {
+    res.sendFile(path.join(__dirname, 'rezervacia.html'));
+});
+
+app.get('/potvrdenie', (req, res) => {
+    res.sendFile(path.join(__dirname, 'potvrdenie.html'));
+});
+
 app.get('/faq', (req, res) => {
     res.sendFile(path.join(__dirname, 'faq.html'));
 });
