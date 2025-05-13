@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potvrdenie rezervácie - AutoRent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/potvrdenie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="confirmation-container">
+        <!-- Left Column -->
+        <div class="personal-info">
+            <h2>Osobné údaje</h2>
+            <div class="form-grid">
+                <input type="text" placeholder="Meno">
+                <input type="text" placeholder="Priezvisko">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Telefón">
+                <input type="text" placeholder="Rodné číslo" class="full-width">
+            </div>
+
+            <h2>Údaje o polohe</h2>
+            <div class="form-grid">
+                <input type="text" placeholder="Adresa">
+                <input type="text" placeholder="Mesto">
+                <input type="text" placeholder="PSČ">
+                <input type="text" placeholder="Krajina">
+            </div>
+
+            <div class="terms">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="osobne-udaje">
+                    <label for="osobne-udaje">Súhlasím so spracovaním osobných údajov</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="podmienky">
+                    <label for="podmienky">Súhlasím s obchodnými podmienkami</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="reservation-summary">
+            <div class="car-info">
+                <h2>Škoda Rapid</h2>
+                <p class="car-specs">
+                    <span><i class="fas fa-cog"></i> Automatická</span>
+                    <span class="separator">•</span>
+                    <span><i class="fas fa-gas-pump"></i> Nafta</span>
+                    <span class="separator">•</span>
+                    <span><i class="fas fa-users"></i> 5 miest</span>
+                    <span class="separator">•</span>
+                    <span><i class="fas fa-car"></i> Komerčné</span>
+                </p>
+                <div class="car-image">
+                    obr. č.1
+                </div>
+            </div>
+
+            <div class="reservation-details">
+                <div class="detail-group">
+                    <div class="detail-box">
+                        <label>Miesto vyzdvihnutia</label>
+                        <input type="text" value="Bratislava">
+                    </div>
+                    <div class="detail-box">
+                        <label>Miesto odovzdania</label>
+                        <input type="text" value="Bratislava">
+                    </div>
+                </div>
+
+                <div class="detail-group">
+                    <div class="detail-box">
+                        <label>Dátum vyzdvihnutia</label>
+                        <input type="date">
+                    </div>
+                    <div class="detail-box">
+                        <label>Dátum odovzdania</label>
+                        <input type="date">
+                    </div>
+                </div>
+
+                <div class="detail-group">
+                    <div class="detail-box">
+                        <label>Čas vyzdvihnutia</label>
+                        <input type="time" step="3600" format="12">
+                    </div>
+                    <div class="detail-box">
+                        <label>Čas odovzdania</label>
+                        <input type="time" step="3600" format="12">
+                    </div>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-label">CENA:</div>
+                    <div class="price-value">35 €/deň</div>
+                </div>
+
+                <div class="payment-method">
+                    <h3>Spôsob platby:</h3>
+                    <div class="radio-group">
+                        <input type="radio" id="bank-transfer" name="payment" value="transfer">
+                        <label for="bank-transfer">prevod na účet</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="cash" name="payment" value="cash">
+                        <label for="cash">hotovosť</label>
+                    </div>
+                </div>
+
+                <button class="btn-confirm">Dokončiť objednávku</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
