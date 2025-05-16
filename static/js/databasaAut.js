@@ -1,10 +1,7 @@
 const auta = [
     {
         id: 1,
-<<<<<<< HEAD
-=======
         displayPrice: 40,
->>>>>>> 673a547aa175784e9465012f3b4ca19fdd5cdcf6
         displayName: "Arteon SB",
         debugName: "arteonsb",
         limitkm: 150,
@@ -13,11 +10,6 @@ const auta = [
         styriDesat: 60,
         jedenastDvadsat: 50,
         dvadsatjednaTridsat: 40,
-<<<<<<< HEAD
-        zaloha: 500,
-    },
-]
-=======
         zaloha: 500
     },
     {
@@ -125,4 +117,3 @@ const auta = [
 
 
 export default auta;
->>>>>>> 673a547aa175784e9465012f3b4ca19fdd5cdcf6
