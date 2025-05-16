@@ -2,6 +2,7 @@ const auta = [
     {
         id: 1,
         displayPrice: 40,
+        typTabulky: 5,
         displayName: "Arteon SB",
         debugName: "arteonsb",
         limitkm: 150,
@@ -21,7 +22,7 @@ const auta = [
         cenakmNavyse: 0.1,
         jeden: {
             cena: 170,
-            limit: 300
+            limit: 300  
         },
         dvaTri: {
             cena: 110,
