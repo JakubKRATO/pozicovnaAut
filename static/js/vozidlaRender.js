@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <line x1="12" y1="8" x2="12.01" y2="8"/>
                                 </svg>
                             </div>
-                            <a href="/rezervacia" class="btn btn-primary">Rezervovať</a>
+                            <a href="/rezervacia?id=${auta[i].id}" class="btn btn-primary reserveButton" data-id="${auta[i].id}">Rezervovať</a>
                         </div>
                     </div>`;
         vehicleContainer.appendChild(vehicle);

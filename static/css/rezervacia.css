@@ -101,6 +101,9 @@ body {
 }
 
 .main-image {
+    background-image: url(/img/auta/arteonsb/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 800px;
     height: 500px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -122,6 +125,8 @@ body {
 }
 
 .thumbnail {
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 260px;
     height: 160px;
     background-color: rgba(255, 255, 255, 0.05);

@@ -11,7 +11,9 @@ const auta = [
         styriDesat: 60,
         jedenastDvadsat: 50,
         dvadsatjednaTridsat: 40,
-        zaloha: 500
+        zaloha: 500,
+        palivo: "Nafta",
+        prevodovka: "Automatická"
     },
     {
         id: 2,
