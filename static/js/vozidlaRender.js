@@ -113,7 +113,7 @@ const renderTable = (typ,auto) => {
                                     <tr><td>21 - 30 dní</td><td>${auto.dvadsatjednaTridsat} €</td></tr>
                                   </tbody>
                                 </table>`;
-    }
+    };
 };
 
 
