@@ -98,7 +98,26 @@ const renderTable = (typ,auto) => {
                                   </tbody>
                                 </table>`;
     } else if (typ === 4) {
-        // No content yet for typ 4
+        tabulkaCon.innerHTML = `<button class="close-btn">✕</button>
+                            <h3>Cenník - [Názov vozidla]</h3>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Limit km</th>
+                                  <th>1 - 3 dní</th>
+                                  <th>4 - 10 dní</th>
+                                  <th>11 - 20 dní</th>
+                                  <th>21 - 30 dní</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr><td>150</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+                                <tr><td>200</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+                                <tr><td>150</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+                                <tr><td>150</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+                                <tr><td>200</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+                              </tbody>
+                            </table>`;
     } else if (typ === 5) {
         tabulkaCon.innerHTML = `<button class="close-btn">✕</button>
                                 <h3>Cenník - ${auto.displayName}</h3>

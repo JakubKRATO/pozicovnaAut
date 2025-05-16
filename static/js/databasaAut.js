@@ -114,6 +114,19 @@ const auta = [
         limit: 300,
         zaloha: 350
     },
+    {
+        id: 7,
+        displayPrice: 40,
+        typTabulky: 5,
+        displayName: "VW Passat B8",
+        debugName: "vwpassat",
+        limitkm: 150,
+        jednaTri: 55,
+        styriDesat: 50,
+        jedenastDvadsat: 45,
+        dvadsatjednaTridsat: 40,
+        zaloha: 999999
+    },
 ]
 
 
