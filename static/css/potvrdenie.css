@@ -1,0 +1,267 @@
+/* Main Layout */
+body {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.confirmation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Form Styling */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(155, 0, 0, 0.2);
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Headings */
+h2 {
+    font-size: 24px;
+    margin: 30px 0 15px;
+    color: #ffffff;
+}
+
+/* Checkbox Styling */
+.terms {
+    margin-top: 30px;
+}
+
+.checkbox-group {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-group label {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+/* Right Column Styling */
+.reservation-summary {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.car-info {
+    margin-bottom: 30px;
+}
+
+.car-specs {
+    color: #cccccc;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.car-specs i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.car-specs .separator {
+    color: var(--primary-color);
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.car-image {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+    min-height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #666;
+}
+
+/* Detail Boxes */
+.detail-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-box label {
+    display: block;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.detail-box input {
+    width: 100%;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+}
+.detail-box input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239B0000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3e%3c/rect%3e%3cline x1='16' y1='2' x2='16' y2='6'%3e%3c/line%3e%3cline x1='8' y1='2' x2='8' y2='6'%3e%3c/line%3e%3cline x1='3' y1='10' x2='21' y2='10'%3e%3c/line%3e%3c/svg%3e");
+}
+
+.detail-box input:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.detail-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(155, 0, 0, 0.2);
+}
+
+/* Price Section */
+.price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-label {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.price-value {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* Payment Method */
+.payment-method {
+    margin: 20px 0;
+}
+
+.payment-method h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.radio-group {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.radio-group label {
+    color: #cccccc;
+}
+
+/* Button */
+.btn-confirm {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-confirm:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .confirmation-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-group {
+        grid-template-columns: 1fr;
+    }
+} 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naše vozidlá - AutoRent</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/vozidla.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Tabulka section -->
+     <div class="moneyTable-container hide">
+        <div class="table">
+            <button class="close-btn">✕</button>
+            <h3>Cenník - <p></p></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dĺžka prenájmu</th>
+                        <th>Cena / deň</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1 deň</td><td>55 €</td></tr>
+                    <tr><td>2 - 3 dni</td><td>50 €</td></tr>
+                    <tr><td>4 - 7 dní</td><td>44 €</td></tr>
+                    <tr><td>8 - 14 dní</td><td>38 €</td></tr>
+                    <tr><td>15 - 30 dní</td><td>33 €</td></tr>
+                </tbody>
+            </table>
+        </div>
+     </div>
+
+    <!-- Hero section with navigation -->
+    <section class="hero">
+        <!-- Hamburger menu -->
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Desktop navigation -->
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla" class="active">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile navigation -->
+        <nav class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla" class="active">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Naše vozidlá</h1>
+            <br>
+            <p>Vyberte si z našej širokej ponuky kvalitných vozidiel</p>
+        </div>
+    </section>
+
+    <!-- Vyhľadávací formulár -->
+    <section class="search-section">
+        <div class="container">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="location">Lokalita vyzdvihnutia</label>
+                    <select id="location" required>
+                        <option value="">Vyberte lokalitu</option>
+                        <option value="bratislava">Bratislava</option>
+                        <option value="kosice">Košice</option>
+                        <option value="zilina">Žilina</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pickup-date">Dátum vyzdvihnutia</label>
+                    <input type="date" id="pickup-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-date">Dátum vrátenia</label>
+                    <input type="date" id="return-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="car-type">Typ vozidla</label>
+                    <select id="car-type" required>
+                        <option value="">Všetky typy</option>
+                        <option value="viacmiestne">Viac miestne</option>
+                        <option value="suv">SUV</option>
+                        <option value="luxusne">Luxusné</option>
+                        <option value="sportove">Športové</option>
+                        <option value="komercne">Komerčné</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Vyhľadať</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Katalóg vozidiel -->
+    <section class="vehicles">
+        <div class="container">
+            <div class="vehicles-grid">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (rovnaký ako v index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +421 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@autorent.sk</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hlavná 123, Bratislava</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rýchle odkazy</h4>
+                    <ul>
+                        <li><a href="/vozidla">Naše vozidlá</a></li>
+                        <li><a href="/podmienky">Podmienky prenájmu</a></li>
+                        <li><a href="/faq">Časté otázky</a></li>
+                        <li><a href="/kontakt">Kontaktujte nás</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sledujte nás</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoRent. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/vozidlaRender.js" type="module"></script>
+    <script src="/js/navigation.js"></script>
+</body>
+</html> 

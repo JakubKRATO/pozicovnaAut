@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - AutoRent</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Hero section with navigation -->
+    <section class="hero">
+        <!-- Hamburger menu -->
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Desktop navigation -->
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile navigation -->
+        <nav class="mobile-nav">
+            <ul class="nav-links">
+                <li><a href="/">Domov</a></li>
+                <li><a href="/onas">O nás</a></li>
+                <li><a href="/vozidla">Rezervácia</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/kontakt" class="active">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile menu overlay -->
+        <div class="mobile-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Kontaktujte nás</h1>
+            <br>
+            <p>Sme tu pre vás 24/7</p>
+        </div>
+    </section>
+
+    <!-- Kontaktné informácie a mapa -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Adresa</h3>
+                        <p>Hlavná 123<br>841 01 Bratislava</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefón</h3>
+                        <p>+421 900 123 456<br>+421 900 789 012</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@autorent.sk<br>rezervacie@autorent.sk</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Otváracie hodiny</h3>
+                        <p>Pondelok - Piatok: 8:00 - 18:00<br>
+                           Sobota: 9:00 - 14:00<br>
+                           Nedeľa: Zatvorené</p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.964247676321!2d17.107014315641837!3d48.14817857922384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8946168b3a2f%3A0x89d0d7537b37f8c2!2sHlavn%C3%A9%20n%C3%A1mestie%2C%20811%2001%20Bratislava!5e0!3m2!1ssk!2ssk!4v1645541234567!5m2!1ssk!2ssk"
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontaktný formulár -->
+    <section class="contact-form">
+        <div class="container">
+            <h2>Napíšte nám</h2>
+            <form id="contactForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Meno a priezvisko *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefón</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Predmet *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Vyberte predmet</option>
+                            <option value="rezervacia">Rezervácia vozidla</option>
+                            <option value="info">Všeobecné informácie</option>
+                            <option value="cena">Cenová ponuka</option>
+                            <option value="staznost">Sťažnosť</option>
+                            <option value="ine">Iné</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Správa *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label class="checkbox-container">
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            Súhlasím so spracovaním osobných údajov
+                        </label>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn btn-primary">Odoslať správu</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (rovnaký ako v index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p><i class="fas fa-phone"></i> +421 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@autorent.sk</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hlavná 123, Bratislava</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Rýchle odkazy</h4>
+                    <ul>
+                        <li><a href="/vozidla">Naše vozidlá</a></li>
+                        <li><a href="/podmienky">Podmienky prenájmu</a></li>
+                        <li><a href="/faq">Časté otázky</a></li>
+                        <li><a href="/kontakt">Kontaktujte nás</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sledujte nás</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoRent. Všetky práva vyhradené.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/navigation.js"></script>
+</body>
+</html> 

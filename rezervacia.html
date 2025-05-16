@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervácia vozidla - AutoRent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rezervacia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <ul class="nav-links">
+            <li><a href="/">Domov</a></li>
+            <li><a href="/onas">O nás</a></li>
+            <li><a href="/vozidla" class="active">Rezervácia</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile menu -->
+    <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="mobile-nav">
+        <ul class="nav-links">
+            <li><a href="/">Domov</a></li>
+            <li><a href="/onas">O nás</a></li>
+            <li><a href="/vozidla" class="active">Rezervácia</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="mobile-overlay"></div>
+
+    <!-- Vehicle Detail Section -->
+    <section class="vehicle-detail">
+        <div class="vehicle-detail-container">
+            <h1 class="car-title">Škoda Rapid</h1>
+            <p class="car-subtitle">
+                <span><i class="fas fa-cog"></i> Automatická</span>
+                <span class="separator">•</span>
+                <span><i class="fas fa-gas-pump"></i> Nafta</span>
+                <span class="separator">•</span>
+                <span><i class="fas fa-users"></i> 5 miest</span>
+                <span class="separator">•</span>
+                <span><i class="fas fa-car"></i> Komerčné</span>
+            </p>
+
+            <div class="content-wrapper">
+                <div class="vehicle-gallery">
+                    <div class="main-image">
+                        obr. č.1
+                    </div>
+                    <div class="thumbnail-grid">
+                        <div class="thumbnail">obr. č.2</div>
+                        <div class="thumbnail">obr. č.3</div>
+                        <div class="thumbnail">obr. č.4</div>
+                    </div>
+                </div>
+
+                <div class="reservation-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="pickup-location">Miesto vyzdvihnutia</label>
+                            <select id="pickup-location" required>
+                                <option value="">Vyberte miesto</option>
+                                <option value="bratislava">Bratislava</option>
+                                <option value="kosice">Košice</option>
+                                <option value="zilina">Žilina</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="return-location">Miesto odovzdania</label>
+                            <select id="return-location" required>
+                                <option value="">Vyberte miesto</option>
+                                <option value="bratislava">Bratislava</option>
+                                <option value="kosice">Košice</option>
+                                <option value="zilina">Žilina</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pickup-date">Dátum vyzdvihnutia</label>
+                            <input type="date" id="pickup-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="return-date">Dátum odovzdania</label>
+                            <input type="date" id="return-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pickup-time">Čas vyzdvihnutia</label>
+                            <input type="time" id="pickup-time" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="return-time">Čas odovzdania</label>
+                            <input type="time" id="return-time" required>
+                        </div>
+                    </div>
+
+                    <div class="price-display">
+                        CENA: 35 €/deň
+                    </div>
+
+                    <a href="/potvrdenie"><button class="btn-reserve">Pokračovať</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Hamburger menu functionality
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.mobile-nav').classList.toggle('active');
+            document.querySelector('.mobile-overlay').classList.toggle('active');
+        });
+
+        document.querySelector('.mobile-overlay').addEventListener('click', function() {
+            this.classList.remove('active');
+            document.querySelector('.hamburger').classList.remove('active');
+            document.querySelector('.mobile-nav').classList.remove('active');
+        });
+
+        // Thumbnail click handlers
+        document.querySelectorAll('.thumbnail').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const mainImage = document.querySelector('.main-image');
+                const thumbText = this.textContent;
+                const mainText = mainImage.textContent;
+                mainImage.textContent = thumbText;
+                this.textContent = mainText;
+            });
+        });
+    </script>
+</body>
+</html> 
