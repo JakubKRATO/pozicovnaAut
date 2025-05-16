@@ -60,6 +60,36 @@
     color: #9b0000e6;
 }
 
+<<<<<<< HEAD
+=======
+.alignPrice {
+    display: flex;
+    align-items: center;
+    width: auto;
+    justify-content: flex-start;
+    width: 100%;
+
+}
+.info {
+    transition: all 0.3s;
+    margin-left: 8px;
+    max-width: 20px;
+    max-height: 20px;
+    stroke: var(--primary-color);          /* muted red like other icons */
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 99px;
+}
+
+.info:hover {
+    transition: all 0.3s;
+    transform: scale(1.15);
+}
+>>>>>>> 673a547aa175784e9465012f3b4ca19fdd5cdcf6
 
 
 
