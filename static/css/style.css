@@ -509,7 +509,7 @@ footer {
 }
 
 .footer-section p {
-    color: #cccccc;
+    color: #5a5a5a;
     margin-bottom: 10px;
 }
 
@@ -522,7 +522,7 @@ footer {
 }
 
 .footer-section ul li a {
-    color: #cccccc;
+    color: #5a5a5a;
     text-decoration: none;
     transition: color 0.3s;
 }
