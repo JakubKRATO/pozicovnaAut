@@ -14,6 +14,12 @@ body {
     min-height: 100vh;
 }
 
+#continue {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(53, 35, 35);
+}
+
 .main-nav {
     background-color: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
