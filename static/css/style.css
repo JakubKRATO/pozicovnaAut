@@ -351,8 +351,6 @@ header {
     transition: all 0.3s ease;
 }
 
-
-/*TESTING BELOW*/
 /* Skrytie defaultných šípok */
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {

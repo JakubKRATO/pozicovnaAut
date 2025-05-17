@@ -102,17 +102,17 @@
     <label for="car-type">Typ vozidla</label>
     <select id="car-type" required>
       <option value="">Všetky typy</option>
-      <option value="viacmiestne">Viac miestne</option>
-      <option value="suv">SUV</option>
-      <option value="luxusne">Luxusné</option>
-      <option value="sportove">Športové</option>
-      <option value="komercne">Komerčné</option>
+      <option value="Viacmiestne">Viac miestne</option>
+      <option value="SUV">SUV</option>
+      <option value="Luxusné">Luxusné</option>
+      <option value="Športové">Športové</option>
+      <option value="Komerčné">Komerčné</option>
     </select>
   </div>
 
   <!-- Tlačidlá -->
-  <button type="submit" class="btn btn-primary">Vyhľadať</button>
-  <button type="button" class="btn btn-secondary" onclick="resetFilters()">Resetovať filtre</button>
+  <button type="submit" class="btn btn-primary" id="submit">Vyhľadať</button>
+  <button type="button" class="btn btn-secondary" id="resetFilter">Resetovať filtre</button>
 </form>
 
         </div>
@@ -161,36 +161,10 @@
             </div>
         </div>
     </footer>
-    <script>
-let steppingInterval = null;
-
-function stepNumber(id, step) {
-  const input = document.getElementById(id);
-  let current = parseInt(input.value, 10) || 0;
-  const min = parseInt(input.min, 10);
-  const max = parseInt(input.max, 10);
-  const newVal = Math.min(max, Math.max(min, current + step));
-  input.value = newVal;
-}
-
-function startStepping(id, step) {
-  stepNumber(id, step);
-  steppingInterval = setInterval(() => stepNumber(id, step), 150);
-}
-
-function stopStepping() {
-  clearInterval(steppingInterval);
-}
-
-// Reset button function
-function resetFilters() {
-  document.getElementById('min-price').value = 40;
-  document.getElementById('max-price').value = 90;
-  document.getElementById('car-type').value = '';
-}
-</script>
 
     <script src="js/vozidlaRender.js" type="module"></script>
-    <script src="/js/navigation.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/vozidlaSearchbar.js"></script>
+    <script src="js/resetFilters.js"></script>
 </body>
 </html> 

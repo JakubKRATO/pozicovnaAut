@@ -12,8 +12,10 @@ const auta = [
         jedenastDvadsat: 50,
         dvadsatjednaTridsat: 40,
         zaloha: 500,
+        kategorie: ["Luxusné"],
+        prevodovka: "Automatická",
         palivo: "Nafta",
-        prevodovka: "Automatická"
+        pocetMiest: 5,
     },
     {
         id: 2,
@@ -42,7 +44,11 @@ const auta = [
             cena: 70,
             limit: 200
         },
-        zaloha: 1000
+        zaloha: 1000,
+        kategorie: ["Luxusné","SUV"],
+        prevodovka: "Automatická",
+        palivo: "Nafta",
+        pocetMiest: 4,
     },
     {
         id: 3,
@@ -60,7 +66,12 @@ const auta = [
             cena: 90,
         },
         limit: 300,
-        zaloha: 350
+        zaloha: 350,
+        kategorie: ["Viacmiestne"],
+        prevodovka: "Automatická",
+        palivo: "Nafta",
+        pocetMiest: 8,
+        
     },
     {
         id: 4,
@@ -78,7 +89,11 @@ const auta = [
             cena: 85,
         },
         limit: 300,
-        zaloha: 350
+        zaloha: 350,
+        kategorie: ["Viacmiestne"],
+        prevodovka: "Automatická",
+        palivo: "Nafta",
+        pocetMiest: 9,
     },
     {
         id: 5,
@@ -96,7 +111,11 @@ const auta = [
             cena: 65,
         },
         limit: 300,
-        zaloha: 350
+        zaloha: 350,
+        kategorie: ["Viacmiestne"],
+        prevodovka: "Automatická",
+        palivo: "Nafta",
+        pocetMiest: 9,
     },
     {
         id: 6,
@@ -114,7 +133,11 @@ const auta = [
             cena: 60,
         },
         limit: 300,
-        zaloha: 350
+        zaloha: 350,
+        kategorie: ["Viacmiestne"],
+        prevodovka: "Automatická",
+        palivo: "Nafta",
+        pocetMiest: 9,
     },
     {
         id: 7,
@@ -127,7 +150,11 @@ const auta = [
         styriDesat: 50,
         jedenastDvadsat: 45,
         dvadsatjednaTridsat: 40,
-        zaloha: 999999
+        zaloha: 999999,
+        kategorie: ["Komerčné"],
+        prevodovka: "Automatická",
+        palivo: "Nafta",
+        pocetMiest: 5,
     },
 ]
 
