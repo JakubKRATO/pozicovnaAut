@@ -60,37 +60,61 @@
     <!-- Vyhľadávací formulár -->
     <section class="search-section">
         <div class="container">
-            <form class="search-form">
-                <div class="form-group">
-                    <label for="location">Lokalita vyzdvihnutia</label>
-                    <select id="location" required>
-                        <option value="">Vyberte lokalitu</option>
-                        <option value="bratislava">Bratislava</option>
-                        <option value="kosice">Košice</option>
-                        <option value="zilina">Žilina</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="pickup-date">Dátum vyzdvihnutia</label>
-                    <input type="date" id="pickup-date" required>
-                </div>
-                <div class="form-group">
-                    <label for="return-date">Dátum vrátenia</label>
-                    <input type="date" id="return-date" required>
-                </div>
-                <div class="form-group">
-                    <label for="car-type">Typ vozidla</label>
-                    <select id="car-type" required>
-                        <option value="">Všetky typy</option>
-                        <option value="viacmiestne">Viac miestne</option>
-                        <option value="suv">SUV</option>
-                        <option value="luxusne">Luxusné</option>
-                        <option value="sportove">Športové</option>
-                        <option value="komercne">Komerčné</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Vyhľadať</button>
-            </form>
+<form class="search-form" id="filter-form">
+  <!-- Min cena -->
+  <div class="form-group custom-number">
+    <label for="min-price">Minimálna cena (€)</label>
+    <div class="number-input">
+      <input type="number" id="min-price" name="min-price" min="40" max="90" value="40" step="1">
+      <div class="spinner-controls">
+        <button type="button" class="spinner-up" 
+          onmousedown="startStepping('min-price', 1)" 
+          onmouseup="stopStepping()" 
+          onmouseleave="stopStepping()">▲</button>
+        <button type="button" class="spinner-down" 
+          onmousedown="startStepping('min-price', -1)" 
+          onmouseup="stopStepping()" 
+          onmouseleave="stopStepping()">▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Max cena -->
+  <div class="form-group custom-number">
+    <label for="max-price">Maximálna cena (€)</label>
+    <div class="number-input">
+      <input type="number" id="max-price" name="max-price" min="40" max="90" value="90" step="1">
+      <div class="spinner-controls">
+        <button type="button" class="spinner-up" 
+          onmousedown="startStepping('max-price', 1)" 
+          onmouseup="stopStepping()" 
+          onmouseleave="stopStepping()">▲</button>
+        <button type="button" class="spinner-down" 
+          onmousedown="startStepping('max-price', -1)" 
+          onmouseup="stopStepping()" 
+          onmouseleave="stopStepping()">▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typ vozidla -->
+  <div class="form-group">
+    <label for="car-type">Typ vozidla</label>
+    <select id="car-type" required>
+      <option value="">Všetky typy</option>
+      <option value="viacmiestne">Viac miestne</option>
+      <option value="suv">SUV</option>
+      <option value="luxusne">Luxusné</option>
+      <option value="sportove">Športové</option>
+      <option value="komercne">Komerčné</option>
+    </select>
+  </div>
+
+  <!-- Tlačidlá -->
+  <button type="submit" class="btn btn-primary">Vyhľadať</button>
+  <button type="button" class="btn btn-secondary" onclick="resetFilters()">Resetovať filtre</button>
+</form>
+
         </div>
     </section>
 
@@ -137,6 +161,35 @@
             </div>
         </div>
     </footer>
+    <script>
+let steppingInterval = null;
+
+function stepNumber(id, step) {
+  const input = document.getElementById(id);
+  let current = parseInt(input.value, 10) || 0;
+  const min = parseInt(input.min, 10);
+  const max = parseInt(input.max, 10);
+  const newVal = Math.min(max, Math.max(min, current + step));
+  input.value = newVal;
+}
+
+function startStepping(id, step) {
+  stepNumber(id, step);
+  steppingInterval = setInterval(() => stepNumber(id, step), 150);
+}
+
+function stopStepping() {
+  clearInterval(steppingInterval);
+}
+
+// Reset button function
+function resetFilters() {
+  document.getElementById('min-price').value = 40;
+  document.getElementById('max-price').value = 90;
+  document.getElementById('car-type').value = '';
+}
+</script>
+
     <script src="js/vozidlaRender.js" type="module"></script>
     <script src="/js/navigation.js"></script>
 </body>
