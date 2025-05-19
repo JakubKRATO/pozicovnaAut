@@ -13,7 +13,6 @@ document.getElementById("min-price").value = minPrice
 document.getElementById("max-price").value = maxPrice
 document.getElementById("car-type").value = typVozidla
 
-
 var auto;
 var pismeno;
 var ignore = false

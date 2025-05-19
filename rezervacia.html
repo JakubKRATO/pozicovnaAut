@@ -44,13 +44,13 @@
         <div class="vehicle-detail-container">
             <h1 class="car-title">Škoda Rapid</h1>
             <p class="car-subtitle">
-                <span><i class="fas fa-cog"></i> Automatická</span>
+                <span id="prevodovka"><i class="fas fa-cog"></i>Automatická</span>
                 <span class="separator">•</span>
-                <span><i class="fas fa-gas-pump"></i> Nafta</span>
+                <span id="palivo"><i class="fas fa-gas-pump"></i> Nafta</span>
                 <span class="separator">•</span>
-                <span><i class="fas fa-users"></i> 5 miest</span>
+                <span id="miesta"><i class="fas fa-users"></i> 5 miest</span>
                 <span class="separator">•</span>
-                <span><i class="fas fa-car"></i> Komerčné</span>
+                <span id="typ"><i class="fas fa-car"></i> Komerčné</span>
             </p>
 
             <div class="content-wrapper">
@@ -70,22 +70,25 @@
                             <label for="pickup-location">Miesto vyzdvihnutia</label>
                             <select id="pickup-location" required>
                                 <option value="">Vyberte miesto</option>
-                                <option value="bratislava">Bratislava</option>
-                                <option value="kosice">Košice</option>
-                                <option value="zilina">Žilina</option>
+                                <option value="trencin">Trenčín</option>
+                                <option value="ine">Iné</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="return-location">Miesto odovzdania</label>
                             <select id="return-location" required>
                                 <option value="">Vyberte miesto</option>
-                                <option value="bratislava">Bratislava</option>
-                                <option value="kosice">Košice</option>
-                                <option value="zilina">Žilina</option>
+                                <option value="trencin">Trenčín</option>
+                                <option value="ine">Iné</option>
                             </select>
                         </div>
-
+                        
+                        <div class="form-group not-necessary">
+                            <input type="text" id="customVyzdvihnutie" required placeholder="Miesto vyzdvihnutia">
+                        </div>
+                        <div class="form-group not-necessary">
+                            <input type="text" id="customOdovzdanie" required placeholder="Miesto odovzdania">
+                        </div>
                         <div class="form-group">
                             <label for="pickup-date">Dátum vyzdvihnutia</label>
                             <input type="date" id="pickup-date" required>
@@ -111,7 +114,7 @@
                         CENA: 35 €/deň
                     </div>
 
-                    <a href="" id="continue"><button class="btn-reserve">Pokračovať</button></a>
+                    <a href="/potvrdenie" id="continue"><button class="btn-reserve">Pokračovať</button></a>
                 </div>
             </div>
         </div>
