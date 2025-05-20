@@ -204,7 +204,8 @@ h2 {
 
 .price-value {
     font-size: 20px;
-    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 1.5px;
 }
 
 /* Payment Method */
@@ -270,6 +271,30 @@ h2 {
     }
 } 
 
+.back-button {
+  position: absolute;      /* adjust as needed */
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.back-button svg {
+  fill: #fff;              /* white arrow */
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 footer {
     margin-top: 50px;
