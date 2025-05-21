@@ -70,8 +70,8 @@ const renderInfo = () => {
     document.getElementsByClassName("car-image")[0].style.backgroundImage = `url(/img/auta/${auto.debugName}/1.png)`
 };
 const calculatePrice = () => {
-    const start = new Date(`${d1}T${c1}`);
-    const end   = new Date(`${d2}T${c2}`);
+    const start = new Date(`${document.getElementById("d1").value}T${document.getElementById("c1").value}`);
+    const end   = new Date(`${document.getElementById("d2").value}T${document.getElementById("c2").value}`);
 
     if (end < start) {
       throw new Error("End date/time must be after start date/time");
@@ -81,6 +81,7 @@ const calculatePrice = () => {
     const diffMs   = end - start;
 
     const days = Math.max(1, Math.ceil(diffMs / msPerDay));
+    console.log(start,end,days);
 };
 submitButton.addEventListener("click",() => {
     let platba = ''
@@ -89,7 +90,6 @@ submitButton.addEventListener("click",() => {
     } else if ((document.getElementById("cash").checked)) {
         platba = "cash"
     }
-    console.log(platba);
     let approval = true
     let data = {
         meno: osobneInputs[0].value,
@@ -107,8 +107,8 @@ submitButton.addEventListener("click",() => {
         d2 : document.getElementById("d2").value,
         c1 : document.getElementById("c1").value,
         c2 : document.getElementById("c2").value,
-        osobneUdaje: document.getElementById("osobne-udaje").value,
-        podmienky: document.getElementById("podmienky").value,
+        osobneUdaje: document.getElementById("osobne-udaje").checked,
+        podmienky: document.getElementById("podmienky").checked,
         platba: platba
     }
     let x = 0;
@@ -122,5 +122,13 @@ submitButton.addEventListener("click",() => {
         window.location.href = "/potvrdenie#missing"
     }
 });
+
+
+d1Input.addEventListener("change",() => {
+    calculatePrice()
+}); 
+d2Input.addEventListener("change",() => {
+    calculatePrice()
+}); 
 
 coreFun()
