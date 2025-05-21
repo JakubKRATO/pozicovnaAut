@@ -40,7 +40,6 @@ const coreFun = () => {
         fillDataIntoForm()
         renderInfo()
         calculatePrice()
-        console.log("success");
     } catch (error) {
         console.log(error);
     }
@@ -82,10 +81,15 @@ const calculatePrice = () => {
     const diffMs   = end - start;
 
     const days = Math.max(1, Math.ceil(diffMs / msPerDay));
-
-    console.log(days);
 };
 submitButton.addEventListener("click",() => {
+    let platba = ''
+    if (document.getElementById("bank-transfer").checked) {
+        platba = "prevod"
+    } else if ((document.getElementById("cash").checked)) {
+        platba = "cash"
+    }
+    console.log(platba);
     let approval = true
     let data = {
         meno: osobneInputs[0].value,
@@ -97,14 +101,26 @@ submitButton.addEventListener("click",() => {
         mesto: polohaInputs[1].value,
         psc: polohaInputs[2].value,
         krajina: polohaInputs[3].value,
-        m1 : m1,
-        m2 : m2,
-        d1 : d1,
-        d2 : d2,
-        c1 : c1,
-        c2 : c2
+        m1 : document.getElementById("m1").value,
+        m2 : document.getElementById("m2").value,
+        d1 : document.getElementById("d1").value,
+        d2 : document.getElementById("d2").value,
+        c1 : document.getElementById("c1").value,
+        c2 : document.getElementById("c2").value,
+        osobneUdaje: document.getElementById("osobne-udaje").value,
+        podmienky: document.getElementById("podmienky").value,
+        platba: platba
     }
-    console.log(data);
+    let x = 0;
+    for (let key in data) {
+        if (!data[key]) {
+            approval = false
+        }
+    }
+    if (!approval) {
+        alert("Vyplňte všetky údaje.")
+        window.location.href = "/potvrdenie#missing"
+    }
 });
 
 coreFun()
