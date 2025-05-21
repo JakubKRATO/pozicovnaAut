@@ -31,8 +31,9 @@ const obr1 = document.getElementsByClassName("car-image")[0]
 const carInfo = document.getElementsByClassName("car-info")[0]
 const submitButton = document.getElementsByClassName("btn-confirm")[0]
 const osobneSection = document.getElementById("osobne")
+const polohaSection = document.getElementById("poloha")
 const osobneInputs = osobneSection.getElementsByTagName("input")
-const polohaSection
+const polohaInputs = polohaSection.getElementsByTagName("input")
 
 const coreFun = () => {
     try {
@@ -85,17 +86,25 @@ const calculatePrice = () => {
     console.log(days);
 };
 submitButton.addEventListener("click",() => {
+    let approval = true
     let data = {
-        meno: osobneInputs[0],
-        prieyvisko: osobneInputs[1],
-        email: osobneInputs[2],
-        telefon: osobneInputs[3],
-        rodneCislo: osobneInputs[4],
-        adresa: osobneInputs[0],
-        mesto: osobneInputs[1],
-        psc: osobneInputs[2],
-        krajina: osobneInputs[3]
+        meno: osobneInputs[0].value,
+        priezvisko: osobneInputs[1].value,
+        email: osobneInputs[2].value,
+        telefon: osobneInputs[3].value,
+        rodneCislo: osobneInputs[4].value,
+        adresa: polohaInputs[0].value,
+        mesto: polohaInputs[1].value,
+        psc: polohaInputs[2].value,
+        krajina: polohaInputs[3].value,
+        m1 : m1,
+        m2 : m2,
+        d1 : d1,
+        d2 : d2,
+        c1 : c1,
+        c2 : c2
     }
+    console.log(data);
 });
 
 coreFun()
