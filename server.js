@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mail from "./sendMail.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 3500;
 
 // Serve static files from the static directory
 app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.json());
 
 // Serve robots.txt and sitemap.xml
 app.get('/robots.txt', (req, res) => {
@@ -53,12 +55,14 @@ app.get('/faq', (req, res) => {
     res.sendFile(path.join(__dirname, 'faq.html'));
 });
 
-// Handle 404
+app.post("/posliObjednavku",(req,res) => {
+    const message = mail.sendMail(req.body)
+    res.json({message: message})
+});
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '404.html'));
 });
 
-// Error handler
 app.use((err, req, res, next) => {
     res.sendFile(path.join(__dirname, '404.html'));
 });

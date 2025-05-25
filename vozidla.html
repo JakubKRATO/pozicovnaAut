@@ -63,7 +63,7 @@
 <form class="search-form" id="filter-form">
   <!-- Min cena -->
   <div class="form-group custom-number">
-    <label for="min-price">Minimálna cena (€)</label>
+    <label for="min-price">Minimálna cena (40€)</label>
     <div class="number-input">
       <input type="number" id="min-price" name="min-price" min="40" max="90" value="40" step="1">
       <div class="spinner-controls">
@@ -81,7 +81,7 @@
 
   <!-- Max cena -->
   <div class="form-group custom-number">
-    <label for="max-price">Maximálna cena (€)</label>
+    <label for="max-price">Maximálna cena (90€)</label>
     <div class="number-input">
       <input type="number" id="max-price" name="max-price" min="40" max="90" value="90" step="1">
       <div class="spinner-controls">
@@ -100,7 +100,7 @@
   <!-- Typ vozidla -->
   <div class="form-group">
     <label for="car-type">Typ vozidla</label>
-    <select id="car-type" required>
+    <select id="car-type">
       <option value="">Všetky typy</option>
       <option value="Viacmiestne">Viac miestne</option>
       <option value="SUV">SUV</option>
@@ -111,7 +111,7 @@
   </div>
 
   <!-- Tlačidlá -->
-  <button type="submit" class="btn btn-primary" id="submit">Vyhľadať</button>
+  <button type="submit" class="btn btn-primary" id="hladat">Vyhľadať</button>
   <button type="button" class="btn btn-secondary" id="resetFilter">Resetovať filtre</button>
 </form>
 

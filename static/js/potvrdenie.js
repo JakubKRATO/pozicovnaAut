@@ -6,11 +6,14 @@ if (!id) {
 }
 const auto = auta.find(a => a.id === id)
 var pismeno
-
+var oznaming;
 if (auto.pocetMiest == 4) {
     pismeno = "a"
 } else {
     pismeno = ""
+}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 const m1 = sessionStorage.getItem("m1") || null
 const m2 = sessionStorage.getItem("m2") || null
@@ -56,34 +59,82 @@ const fillDataIntoForm = () => {
 };
 const renderInfo = () => {
     carInfo.innerHTML = `<h2 id="car-name"> ${auto.displayName}</h2>
-                        <p class="car-specs">
-                        <span><i class="fas fa-cog"></i> ${auto.prevodovka}</span>
-                        <span class="separator">•</span>
-                        <span><i class="fas fa-gas-pump"></i> ${auto.palivo}</span>
-                        <span class="separator">•</span>
-                        <span><i class="fas fa-users"></i> ${auto.pocetMiest} miest${pismeno}</span>
-                        <span class="separator">•</span>
-                        <span><i class="fas fa-car"></i> ${auto.kategorie}</span>
-                        </p>
-                        <div class="car-image">
-                        </div>`
+    <p class="car-specs">
+    <span><i class="fas fa-cog"></i> ${auto.prevodovka}</span>
+    <span class="separator">•</span>
+    <span><i class="fas fa-gas-pump"></i> ${auto.palivo}</span>
+    <span class="separator">•</span>
+    <span><i class="fas fa-users"></i> ${auto.pocetMiest} miest${pismeno}</span>
+    <span class="separator">•</span>
+    <span><i class="fas fa-car"></i> ${auto.kategorie}</span>
+    </p>
+    <div class="car-image">
+    </div>`
     document.getElementsByClassName("car-image")[0].style.backgroundImage = `url(/img/auta/${auto.debugName}/1.png)`
 };
 const calculatePrice = () => {
     const start = new Date(`${document.getElementById("d1").value}T${document.getElementById("c1").value}`);
     const end   = new Date(`${document.getElementById("d2").value}T${document.getElementById("c2").value}`);
-
+    
     if (end < start) {
-      throw new Error("End date/time must be after start date/time");
+        throw new Error("End date/time must be after start date/time");
     }
-
+    
     const msPerDay = 1000 * 60 * 60 * 24;
     const diffMs   = end - start;
-
+    
     const days = Math.max(1, Math.ceil(diffMs / msPerDay));
-    console.log(start,end,days);
+    let cena;
+    switch (auto.typTabulky) {
+        case 1: 
+        if (days === 1) {
+            cena = auto.jeden.cena;
+        } else if (days === 2 || days === 3) {
+            cena = auto.dvaTri.cena * days;
+        } else if (days >= 4 && days <= 7) {
+            cena = auto.styriSedem.cena * days;
+        } else if (days >= 8 && days <= 14) {
+            cena = auto.osemStrnast.cena * days;
+        } else if (days >= 15 && days <= 30) {
+            cena = auto.osemStrnast.cena * days;
+        } else if (days > 30) {
+            cena = "+421 948 158 119";
+        }
+        break;
+        
+        case 3: 
+        if (days >= 1 && days <= 3) {
+            cena = auto.jedenTri.cena * days;
+        } else if (days >= 4 && days <= 6) {
+            cena = auto.styriSest.cena * days;
+        } else if (days >= 7 && days <= 29) {
+            cena = auto.styriSedem.cena * days;
+        } else if (days >= 30) {
+            cena = "+421 948 158 119";
+        }
+        break;
+        
+        case 5: 
+        if (days >= 1 && days <= 3) {
+            cena = auto.jednaTri * days;
+        } else if (days >= 4 && days <= 10) {
+            cena = auto.styriDesat * days;
+        } else if (days >= 11 && days <= 20) {
+            cena = auto.jedenastDvadsat * days;
+        } else if (days >= 21 && days <= 30) {
+            cena = auto.dvadsatjednaTridsat * days;
+        } else if (days > 30) {
+            cena = "+421 948 158 119";
+        }
+        break;
+    }
+    if (cena) {
+        document.getElementsByClassName("price-value")[0].innerHTML = `<div class="bigg">${cena}</div> €`
+    } else {
+        document.getElementsByClassName("price-value")[0].innerHTML = `Vyplňte dátum a čas`
+    }
 };
-submitButton.addEventListener("click",() => {
+submitButton.addEventListener("click",async (e) => {
     let platba = ''
     if (document.getElementById("bank-transfer").checked) {
         platba = "prevod"
@@ -91,7 +142,27 @@ submitButton.addEventListener("click",() => {
         platba = "cash"
     }
     let approval = true
-    let data = {
+    let prazdne = []
+    let Inputs = [
+        osobneInputs[0],
+        osobneInputs[1],
+        osobneInputs[2],
+        osobneInputs[3],
+        osobneInputs[4],
+        polohaInputs[0],
+        polohaInputs[1],
+        polohaInputs[2],
+        polohaInputs[3],
+        m1Input,
+        m2Input,
+        d1Input,
+        d2Input,
+        t1Input,
+        t2Input,
+        document.getElementById("osobne-udaje"),
+        document.getElementById("podmienky"),
+    ]
+    var data = {
         meno: osobneInputs[0].value,
         priezvisko: osobneInputs[1].value,
         email: osobneInputs[2].value,
@@ -101,25 +172,47 @@ submitButton.addEventListener("click",() => {
         mesto: polohaInputs[1].value,
         psc: polohaInputs[2].value,
         krajina: polohaInputs[3].value,
-        m1 : document.getElementById("m1").value,
-        m2 : document.getElementById("m2").value,
-        d1 : document.getElementById("d1").value,
-        d2 : document.getElementById("d2").value,
-        c1 : document.getElementById("c1").value,
-        c2 : document.getElementById("c2").value,
+        m1 : m1Input.value,
+        m2 : m2Input.value,
+        d1 : d1Input.value,
+        d2 : d2Input.value,
+        c1 : t1Input.value,
+        c2 : t2Input.value,
         osobneUdaje: document.getElementById("osobne-udaje").checked,
         podmienky: document.getElementById("podmienky").checked,
         platba: platba
     }
-    let x = 0;
+    let trebaOznamit = []
+    let x = -1;
     for (let key in data) {
+        x++;
         if (!data[key]) {
+            trebaOznamit.push(x)
             approval = false
         }
     }
     if (!approval) {
-        alert("Vyplňte všetky údaje.")
-        window.location.href = "/potvrdenie#missing"
+        for (let i of trebaOznamit) {
+            if (typeof Inputs[i] == "undefined") {
+                continue
+            }
+            Inputs[i].classList.add("oznamujem")
+        }
+        await sleep(1000)
+        for (let i of Inputs) {
+            if (i.classList.contains("oznamujem")) {
+                i.classList.remove("oznamujem");
+            }
+        }
+    } else {
+        console.log(data);
+        const result = await fetch("http://localhost:3500/posliObjednavku",{
+            method: "POST",
+            headers: { "Content-type" : "application/json" },
+            body: JSON.stringify(data)
+        });
+        const odpoved = await result.json()
+        console.log(odpoved.message);
     }
 });
 
@@ -128,6 +221,12 @@ d1Input.addEventListener("change",() => {
     calculatePrice()
 }); 
 d2Input.addEventListener("change",() => {
+    calculatePrice()
+}); 
+t1Input.addEventListener("change",() => {
+    calculatePrice()
+}); 
+t2Input.addEventListener("change",() => {
     calculatePrice()
 }); 
 
