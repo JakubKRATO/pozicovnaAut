@@ -1,49 +1,12 @@
-import dotenv from "dotenv"
-import nodemailer from "nodemailer"
-
-dotenv.config()
-
-function formatDate(dateStr) {
-    const date = new Date(dateStr);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // mesiace sú 0-indexované
-    const year = date.getFullYear();
-    return `${day}. ${month}. ${year}`;
-}
-const sendMail = (data) => {
-    console.log(process.env.GMAIL_SECRET);
-    console.log(9);
-    const transport = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: "ffcars.websystem@gmail.com",
-            pass: process.env.GMAIL_SECRET
-        }
-    });
-const mailOptions = {
-    from: "ffcars.websystem@gmail.com",
-    to: "kubko.kratochvil@gmail.com",
-    subject: "Objednávka z webu",
-    html: `
 <div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
 
-    <div style="    background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/hero/heroDarker3.png);
+    <div style="    background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailAdmin.png);
                     background-size: cover; 
                     background-position: center;
                     min-height: 120px;
+                    position: relative;
                     display: flex;
-                    justify-content: center;
-                    border-radius: 15px;
-                    position: relative;">
-        <h2 style="
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to bottom, #ffffff 30%, #666666 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            padding: 0.1em 0;">Nová objednávka z webu</h2>
-                    </div>
+                    justify-content: center;"></div>
         <h3 style="margin-top: 35px;">🧍‍♂️ Osobné údaje</h3>
         <p><strong>Meno:</strong> ${data.meno} ${data.priezvisko}</p>
         <p><strong>Email:</strong> ${data.email}</p>
@@ -72,16 +35,3 @@ const mailOptions = {
         </p>
         <p style="font-size: 0.7rem;"><strong>Neodpovedajte na tento e-mail</strong> – odpovede nie sú monitorované.</p>
     </div>
-    `
-};
-    transport.sendMail(mailOptions, (err,info) => {
-        console.log(info,err);
-        
-        if (err) {
-            return err
-        }
-        return info
-    });
-};
-
-export default { sendMail };
