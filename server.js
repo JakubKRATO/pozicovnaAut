@@ -59,18 +59,22 @@ app.post("/posliObjednavku",(req,res) => {
     const statusClient = mail.sendMailClient(req.body)
     if (!statusClient) {
         res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
+        return
     }
     const statusAdmin = mail.sendMailAdmin(req.body)
     if (statusAdmin) {
         res.status(200).json({message: "success"})
+        return
     }
     res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
 });
 app.post("/supportMail",(req,res) => {
-    const statusMessage = mail.sendSupportMail
-
+    const statusMessage = mail.sendSupportMail(req.body)
+    if (!statusMessage) {
+        res.status(500).json({message: "Zas niečo nejde. Chyba servera (500)"})
+        return
+    }
     res.status(200).json({message: "success"})
-    res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
 });
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '404.html'));
