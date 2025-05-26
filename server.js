@@ -66,6 +66,12 @@ app.post("/posliObjednavku",(req,res) => {
     }
     res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
 });
+app.post("/supportMail",(req,res) => {
+    const statusMessage = mail.sendSupportMail
+
+    res.status(200).json({message: "success"})
+    res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
+});
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '404.html'));
 });

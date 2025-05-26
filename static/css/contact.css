@@ -149,7 +149,6 @@
     height: 0;
     width: 0;
 }
-
 .checkmark {
     position: absolute;
     left: 0;
@@ -170,23 +169,16 @@
 }
 
 .checkmark:after {
-    content: "";
-    position: absolute;
+    content: "✓";
+    color: var(--white);
+    font-size: 14px;
+    font-weight: bold;
     display: none;
+    transform: translateX(4.4px);
 }
 
 .checkbox-container input:checked ~ .checkmark:after {
     display: block;
-}
-
-.checkbox-container .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
 }
 
 /* Responzívny dizajn */
