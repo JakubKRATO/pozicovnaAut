@@ -7,6 +7,7 @@ if (!id) {
 const auto = auta.find(a => a.id === id)
 var pismeno
 var oznaming;
+var cenaOK = false
 if (auto.pocetMiest == 4) {
     pismeno = "a"
 } else {
@@ -21,7 +22,6 @@ const d1 = sessionStorage.getItem("d1") || null
 const d2 = sessionStorage.getItem("d2") || null
 const c1 = sessionStorage.getItem("c1") || null
 const c2 = sessionStorage.getItem("c2") || null
-console.log(c1,c2);
 
 const m1Input = document.getElementById("m1")
 const m2Input = document.getElementById("m2")
@@ -77,7 +77,8 @@ const calculatePrice = () => {
     const end   = new Date(`${document.getElementById("d2").value}T${document.getElementById("c2").value}`);
     
     if (end < start) {
-        throw new Error("End date/time must be after start date/time");
+        document.getElementsByClassName("price-value")[0].innerHTML = `Nesprávny dátum...`
+        return
     }
     
     const msPerDay = 1000 * 60 * 60 * 24;
@@ -130,8 +131,10 @@ const calculatePrice = () => {
     }
     if (cena) {
         document.getElementsByClassName("price-value")[0].innerHTML = `<div class="bigg">${cena}</div> €`
+        cenaOK = true
     } else {
         document.getElementsByClassName("price-value")[0].innerHTML = `Vyplňte dátum a čas`
+        cenaOK = false
     }
 };
 submitButton.addEventListener("click",async (e) => {
@@ -191,7 +194,7 @@ submitButton.addEventListener("click",async (e) => {
             approval = false
         }
     }
-    if (!approval) {
+    if (!approval || !cenaOK) {
         for (let i of trebaOznamit) {
             if (typeof Inputs[i] == "undefined") {
                 continue
@@ -205,14 +208,15 @@ submitButton.addEventListener("click",async (e) => {
             }
         }
     } else {
-        console.log(data);
         const result = await fetch("http://localhost:3500/posliObjednavku",{
             method: "POST",
             headers: { "Content-type" : "application/json" },
             body: JSON.stringify(data)
         });
-        const odpoved = await result.json()
-        console.log(odpoved.message);
+        console.log(result.status);
+        if (result.status === 200) {
+            window.location.href = "/kontakt?sprava='yess'"
+        }
     }
 });
 
@@ -229,5 +233,5 @@ t1Input.addEventListener("change",() => {
 t2Input.addEventListener("change",() => {
     calculatePrice()
 }); 
-
+calculatePrice()
 coreFun()

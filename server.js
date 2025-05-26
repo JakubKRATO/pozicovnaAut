@@ -56,8 +56,12 @@ app.get('/faq', (req, res) => {
 });
 
 app.post("/posliObjednavku",(req,res) => {
-    const message = mail.sendMail(req.body)
-    res.json({message: message})
+    const statusClient = mail.sendMailClient(req.body)
+    if (!statusClient) {
+        res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
+    }
+    mail.sendMailAdmin(req.body)
+    res.status(200).json({message: "success"})
 });
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '404.html'));
