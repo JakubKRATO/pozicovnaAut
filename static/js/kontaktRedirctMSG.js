@@ -6,7 +6,7 @@ if (sprava === "uspech") {
     document.getElementsByTagName("h1")[0].innerHTML = "Vaša objednávka bola úspešne odoslaná!"
     document.getElementsByClassName("heroP")[0].innerHTML = "Ozveme sa Vám čoskoro"
 } else if (sprava === "support") {
-    document.getElementsByTagName("h1")[0].innerHTML = "Vaša správa bola odoslaná nášmu týmu."
+    document.getElementsByTagName("h1")[0].innerHTML = "Vaša správa bola odoslaná nášmu tímu."
     document.getElementsByClassName("heroP")[0].innerHTML = "Ozveme sa Vám čoskoro"
 }
 
