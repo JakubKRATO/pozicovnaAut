@@ -60,8 +60,11 @@ app.post("/posliObjednavku",(req,res) => {
     if (!statusClient) {
         res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
     }
-    mail.sendMailAdmin(req.body)
-    res.status(200).json({message: "success"})
+    const statusAdmin = mail.sendMailAdmin(req.body)
+    if (statusAdmin) {
+        res.status(200).json({message: "success"})
+    }
+    res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
 });
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, '404.html'));

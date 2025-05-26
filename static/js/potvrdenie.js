@@ -216,6 +216,8 @@ submitButton.addEventListener("click",async (e) => {
         console.log(result.status);
         if (result.status === 200) {
             window.location.href = "/kontakt?sprava='yess'"
+        } else {
+            alert("Internal server error, skúste znova neskôr alebo nás kontaktujte!")
         }
     }
 });

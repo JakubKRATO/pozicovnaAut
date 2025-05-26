@@ -2,7 +2,7 @@ import dotenv from "dotenv"
 import nodemailer from "nodemailer"
 
 dotenv.config()
-
+console.log(process.env.GMAIL_SECRET);
 function formatDate(dateStr) {
     const date = new Date(dateStr);
     const day = String(date.getDate()).padStart(2, '0');
