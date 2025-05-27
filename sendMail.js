@@ -129,7 +129,7 @@ const sendMailClient = (data) => {
         });
     const mailOptions = {
         from: "ffcars.websystem@gmail.com",
-        to: "kubko.kratochvil@gmail.com",
+        to: data.email,
         subject: "Doklad o vašej objednávke",
         html: `<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
                 <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailClient.png);

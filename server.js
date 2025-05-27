@@ -3,6 +3,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import mail from "./sendMail.js"
 
+
+// https://pozicovnaaut-production.up.railway.app
+// http://localhost:3500
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
