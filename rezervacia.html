@@ -53,7 +53,7 @@
                 <span id="palivo"><i class="fas fa-gas-pump"></i> Nafta</span>
                 <span class="separator">•</span>
                 <span id="miesta"><i class="fas fa-users"></i> 5 miest</span>
-                <span class="separator">•</span>
+                <span class="separator mobileWrap">•</span>
                 <span id="typ"><i class="fas fa-car"></i> Komerčné</span>
             </p>
 
@@ -67,32 +67,58 @@
                         <div class="thumbnail obr"></div>
                     </div>
                 </div>
-
                 <div class="reservation-form">
+
                     <div class="form-grid">
-                        <div class="form-group">
+                        <div class="form-group pocitac">
                             <label for="pickup-location">Miesto vyzdvihnutia</label>
                             <select id="pickup-location" required>
                                 <option value="">Vyberte miesto</option>
-                                <option value="trencin">Trenčín</option>
+                                <option value="Trenčín">Trenčín</option>
                                 <option value="ine">Iné</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pocitac">
                             <label for="return-location">Miesto odovzdania</label>
                             <select id="return-location" required>
                                 <option value="">Vyberte miesto</option>
-                                <option value="trencin">Trenčín</option>
+                                <option value="Trenčín">Trenčín</option>
                                 <option value="ine">Iné</option>
                             </select>
                         </div>
-                        
-                        <div class="form-group not-display hidden custom">
+                        <div class="form-group not-display hidden customP pocitac custom">
                             <input type="text" id="customVyzdvihnutie" required placeholder="Miesto vyzdvihnutia">
                         </div>
-                        <div class="form-group not-display hidden custom">
+                        <div class="form-group not-display hidden customP pocitac custom">
                             <input type="text" id="customOdovzdanie" required placeholder="Miesto odovzdania">
                         </div>
+
+
+                        <!-- MOBIL JE DOLE-->
+                        <div class="form-group mobilne">
+                            <label for="pickup-location">Miesto vyzdvihnutia</label>
+                            <select id="pickup-locationM" required>
+                                <option value="">Vyberte miesto</option>
+                                <option value="Trenčín">Trenčín</option>
+                                <option value="ine">Iné</option>
+                            </select>
+                        </div>
+                        <div class="form-group not-display customMobil mobilne frush customM">
+                            <input type="text" id="customVyzdvihnutieM" class="getFromMobile" required placeholder="Miesto vyzdvihnutia">
+                        </div>
+                        <div class="form-group mobilne">
+                            <label for="return-location">Miesto odovzdania</label>
+                            <select id="return-locationM" required>
+                                <option value="">Vyberte miesto</option>
+                                <option value="Trenčín">Trenčín</option>
+                                <option value="ine">Iné</option>
+                            </select>
+                        </div>
+                        <div class="form-group not-display mobilne frushe customM">
+                            <input type="text" id="customOdovzdanieM" class="getFromMobile" required placeholder="Miesto odovzdania">
+                        </div>
+                        <!-- -->
+
                         <div class="form-group">
                             <label for="pickup-date">Dátum vyzdvihnutia</label>
                             <input type="date" id="pickup-date" required>

@@ -140,6 +140,7 @@ h2 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .car-specs i {
@@ -162,7 +163,7 @@ h2 {
     padding: 20px;
     text-align: center;
     margin: 20px 0;
-    min-height: 200px;
+    min-height: 150px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     color: #666;
@@ -453,3 +454,16 @@ footer {
     border: 1px solid var(--primary-color) !important;
     animation: oznam 1s ease-in-out forwards;
 }
+@media (max-width: 500px) {
+    .personal-info input[type="text"],
+    .personal-info input[type="email"],
+    .personal-info input[type="tel"],
+    .personal-info input[type="date"],
+    .personal-info input[type="time"] {
+        width: 90vw;
+    }
+    .reservation-summary {
+        padding: 25px;
+        width: 89vw;
+    }
+} 

@@ -367,7 +367,9 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 }
-
+.mobilne {
+    display: none !important;
+}
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -422,15 +424,21 @@ body {
     .vehicle-detail {
         padding-top: 6rem;
     }
+    .mobilne {
+        display: initial !important;
+    }
+    .pocitac {
+        display: none !important;
+    }
 } 
 footer {
     border-top: 1px solid #333;
 }
 .not-display {
-    display: none;
+    display: none !important;
 }
 .hidden {
-    visibility: hidden;
+    visibility: hidden ;
 }
 .back-button {
     position: relative;
@@ -449,11 +457,47 @@ footer {
 }
 
 .back-button svg {
-  fill: white;              /* white arrow */
-  width: 1.5rem;
-  height: 1.5rem;
+    fill: white;              /* white arrow */
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .back-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
+@media (max-width: 538px) {
+    .thumbnail {
+        width: 130px;
+        height: 78px;
+    }
+    .car-subtitle {
+        font-size: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+    .car-subtitle .separator.mobileWrap {
+        visibility: hidden;
+    }
+}
+@media (max-width: 477px) {
+    .thumbnail {
+        width: 118px;
+        height: 70.8px;
+    }
+    .vehicle-gallery {
+        gap: 0;
+    }
+    .vehicle-detail-container {
+        padding: 0 8px;
+    }
+    .content-wrapper {
+        gap: 1rem;
+    }
+} 
+@media (max-width: 420px) {
+    .thumbnail {
+        width: 115px;
+        height: 69px;
+    }
+} 

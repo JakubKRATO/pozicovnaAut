@@ -137,7 +137,11 @@ const calculatePrice = () => {
         cenaOK = false
     }
 };
+document.getElementById("reservationForm").addEventListener("submit",(e) => {
+    e.preventDefault()
+});
 submitButton.addEventListener("click",async (e) => {
+    e.preventDefault()
     let platba = ''
     if (document.getElementById("bank-transfer").checked) {
         platba = "prevod"
@@ -235,5 +239,16 @@ t1Input.addEventListener("change",() => {
 t2Input.addEventListener("change",() => {
     calculatePrice()
 }); 
+const tel = document.getElementById("cisloTel");
+tel.addEventListener("input",() => {
+    const value = tel.value;
+    
+    const sanitized = value.replace(/[^\d+]/g, '');
+    
+    const finalValue = sanitized.replace(/\+(?=.+\+)/g, '');
+    
+    console.log(finalValue);
+    tel.value = finalValue;
+});
 calculatePrice()
 coreFun()
