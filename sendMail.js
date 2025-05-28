@@ -76,6 +76,8 @@ const sendMailAdmin = (data) => {
                             position: relative;
                             display: flex;
                             justify-content: center;"></div>
+
+                        <h1 style="margin-top: 10px;"><strong>Auto:</strong> ${data.auto.displayName}</h1>
                         <h3 style="margin-top: 35px;">🧍‍♂️ Osobné údaje</h3>
                         <p><strong>Meno:</strong> ${data.meno} ${data.priezvisko}</p>
                         <p><strong>Email:</strong> ${data.email}</p>
@@ -140,6 +142,18 @@ const sendMailClient = (data) => {
                         position: relative;
                         display: flex;
                         justify-content: center;"></div>
+                <div alt="" style="
+                    background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/auta/${data.auto.debugName}/1.png);
+                    background-size: cover; 
+                    background-position: center;
+                    min-width: 300px;
+                    min-height: 169px;
+                    max-width: 300px;
+                    max-height: 169px;
+                    aspect-ratio: 16/9;
+                    border-radius: 5px;
+                    margin-top: 20px;"></div>
+                <h2>${data.auto.displayName}</h2>
                     <h3 style="margin-top: 35px;">🧍‍♂️ Osobné údaje</h3>
                     <p><strong>Meno:</strong> ${data.meno} ${data.priezvisko}</p>
                     <p><strong>Email:</strong> ${data.email}</p>

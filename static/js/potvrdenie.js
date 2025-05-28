@@ -187,7 +187,8 @@ submitButton.addEventListener("click",async (e) => {
         c2 : t2Input.value,
         osobneUdaje: document.getElementById("osobne-udaje").checked,
         podmienky: document.getElementById("podmienky").checked,
-        platba: platba
+        platba: platba,
+        auto: auto
     }
     let trebaOznamit = []
     let x = -1;
@@ -212,7 +213,7 @@ submitButton.addEventListener("click",async (e) => {
             }
         }
     } else {
-        const result = await fetch("https://pozicovnaaut-production.up.railway.app/posliObjednavku",{
+        const result = await fetch("http://localhost:3500/posliObjednavku",{
             method: "POST",
             headers: { "Content-type" : "application/json" },
             body: JSON.stringify(data)
