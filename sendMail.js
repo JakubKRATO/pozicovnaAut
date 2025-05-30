@@ -25,20 +25,19 @@ const sendSupportMail = (data) => {
             subject: "Niekto sa snaží ťa kontaktovať cez web!",
             html: `<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
                     <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailSupport.png);
-                            background-size: cover; 
-                            background-position: center;
-                            border-radius: 10px;
-                            min-height: 120px;
-                            position: relative;
-                            display: flex;
-                            justify-content: center;"></div>
-                            <h3 style="margin-top: 35px;">🧍‍♂️ Osobné údaje</h3>
-                            <p><strong>Meno:</strong> ${data.meno}</p>
-                            <p><strong>Email:</strong> ${data.email}</p>
-                            <p><strong>Telefón:</strong> ${data.telefon}</p>
-                            <p><strong>Predmet:</strong> ${data.predmet}</p>
-                            <h3 style="margin-top: 35px;">Ich správa:</h3>
-                            <p><strong>${data.message}</strong>
+                    background-size: cover; 
+                    background-position: center;
+                    min-height: 120px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;">
+                    <h3 style="margin-top: 35px;">🧍‍♂️ Osobné údaje</h3>
+                    <p><strong>Meno:</strong> ${data.meno}</p>
+                    <p><strong>Email:</strong> ${data.email}</p>
+                    <p><strong>Telefón:</strong> ${data.telefon}</p>
+                    <p><strong>Predmet:</strong> ${data.predmet}</p>
+                    <h3 style="margin-top: 35px;">Ich správa:</h3>
+                    <p><strong>${data.message}</strong>
                     </div>`
     };
     transport.sendMail(mailOptions, (err,info) => {
