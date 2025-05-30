@@ -466,4 +466,13 @@ footer {
         padding: 25px;
         width: 89vw;
     }
+    .phoneUS {
+        font-size: 0.8rem;
+    }
+    
 } 
+.phoneUS {
+    display: flex;
+    gap: 5px;
+    color: white;
+}

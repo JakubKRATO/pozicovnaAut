@@ -85,7 +85,7 @@ const calculatePrice = () => {
     const diffMs   = end - start;
     
     const days = Math.max(1, Math.ceil(diffMs / msPerDay));
-    let cena;
+    let cena = '';
     switch (auto.typTabulky) {
         case 1: 
         if (days === 1) {
@@ -129,9 +129,13 @@ const calculatePrice = () => {
         }
         break;
     }
-    if (cena) {
+    if (typeof cena != "string" && !!cena) {
         document.getElementsByClassName("price-value")[0].innerHTML = `<div class="bigg">${cena}</div> €`
         cenaOK = true
+    } else if (cena === "+421 948 158 119") {
+        alert("Počet dní presahuje 30 a radi by sme si s vami dohodli cenu na mieru. Zavolajte nám! +421 948 158 119")
+        document.getElementsByClassName("price-value")[0].innerHTML = `<a href="tel:+421948158119" class="phoneUS">Zavolajte nám +421 948 158 119</a>`
+        cena = "Cena bude na mieru. Počet dní je viac ako 30."
     } else {
         document.getElementsByClassName("price-value")[0].innerHTML = `Vyplňte dátum a čas`
         cenaOK = false
@@ -213,7 +217,7 @@ submitButton.addEventListener("click",async (e) => {
             }
         }
     } else {
-        const result = await fetch("https://pozicovnaaut-production.up.railway.app/posliObjednavku",{
+        const result = await fetch("http://localhost:3500/posliObjednavku",{
             method: "POST",
             headers: { "Content-type" : "application/json" },
             body: JSON.stringify(data)

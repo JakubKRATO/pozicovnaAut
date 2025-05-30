@@ -30,7 +30,7 @@ const sendSupportMail = (data) => {
                     min-height: 120px;
                     position: relative;
                     display: flex;
-                    justify-content: center;">
+                    justify-content: center;"></div>
                     <h3 style="margin-top: 35px;">🧍‍♂️ Osobné údaje</h3>
                     <p><strong>Meno:</strong> ${data.meno}</p>
                     <p><strong>Email:</strong> ${data.email}</p>
@@ -133,15 +133,7 @@ const sendMailClient = (data) => {
         to: data.email,
         subject: "Doklad o vašej objednávke",
         html: `<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
-                <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailClient.png);
-                        background-size: cover; 
-                        background-position: center;
-                        border-radius: 10px;
-                        min-height: 120px;
-                        position: relative;
-                        display: flex;
-                        justify-content: center;"></div>
-                <div alt="" style="
+                <div style="
                     background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/auta/${data.auto.debugName}/1.png);
                     background-size: cover; 
                     background-position: center;

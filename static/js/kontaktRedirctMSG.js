@@ -21,7 +21,7 @@ document.getElementById("contactForm").addEventListener("submit",async (e) => {
         predmet: document.getElementById("subject").value,
         message: document.getElementById("message").value,
     }
-    let response = await fetch("https://pozicovnaaut-production.up.railway.app/supportMail",{
+    let response = await fetch("http://localhost:3500/supportMail",{
         method: "POST",
         headers: { "Content-type" : "application/json" },
         body: JSON.stringify(data)
