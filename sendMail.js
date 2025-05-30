@@ -24,7 +24,7 @@ const sendSupportMail = (data) => {
             to: "kubko.kratochvil@gmail.com",
             subject: "Niekto sa snaží ťa kontaktovať cez web!",
             html: `<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
-                    <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailSupport.png);
+                    <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailSupport.webp);
                     background-size: cover; 
                     background-position: center;
                     min-height: 120px;
@@ -67,7 +67,7 @@ const sendMailAdmin = (data) => {
             to: "kubko.kratochvil@gmail.com",
             subject: "Objednávka z webu",
             html: `<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
-                    <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailAdmin.png);
+                    <div style="background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/emailAdmin.webp));
                             background-size: cover; 
                             background-position: center;
                             border-radius: 10px;
@@ -134,7 +134,7 @@ const sendMailClient = (data) => {
         subject: "Doklad o vašej objednávke",
         html: `<div style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; background-color: #1a1a1a; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #333;">
                 <div style="
-                    background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/auta/${data.auto.debugName}/1.png);
+                    background-image: url(https://raw.githubusercontent.com/JakubKRATO/pozicovnaAut/main/static/img/auta/${data.auto.debugName}/1.webp));
                     background-size: cover; 
                     background-position: center;
                     min-width: 300px;

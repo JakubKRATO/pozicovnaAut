@@ -70,7 +70,7 @@ const renderInfo = () => {
     </p>
     <div class="car-image">
     </div>`
-    document.getElementsByClassName("car-image")[0].style.backgroundImage = `url(/img/auta/${auto.debugName}/1.png)`
+    document.getElementsByClassName("car-image")[0].style.backgroundImage = `url(/img/auta/${auto.debugName}/1.webp)`
 };
 const calculatePrice = () => {
     const start = new Date(`${document.getElementById("d1").value}T${document.getElementById("c1").value}`);

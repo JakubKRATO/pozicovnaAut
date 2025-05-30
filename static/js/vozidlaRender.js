@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       vehicle.classList.add("vehicle-card")
       
       vehicle.innerHTML = `<div class="vehicle-image">
-      <img src="img/auta/${auta[i].debugName}/1.png" alt="Škoda Octavia">
+      <img src="img/auta/${auta[i].debugName}/1.webp" alt="Škoda Octavia">
       <span class="category">${auta[i].kategorie}</span>
       </div>
       <div class="vehicle-info">
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
           vehicle.classList.add("vehicle-card")
           
           vehicle.innerHTML = `<div class="vehicle-image">
-          <img src="img/auta/${auta[i].debugName}/1.png" alt="Škoda Octavia">
+          <img src="img/auta/${auta[i].debugName}/1.webp" alt="Škoda Octavia">
           <span class="category">${auta[i].kategorie}</span>
           </div>
           <div class="vehicle-info">
@@ -222,7 +222,7 @@ resetButton.addEventListener("click",resetFilters)
     //
     // <div class="vehicle-card">
     //     <div class="vehicle-image">
-    //         <img src="img/auta/arteonsb/1.png" alt="Škoda Octavia">
+    //         <img src="img/auta/arteonsb/1.webp" alt="Škoda Octavia">
     //         <span class="category">Osobné</span>
     //     </div>
     //     <div class="vehicle-info">

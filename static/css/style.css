@@ -202,7 +202,7 @@ header {
 
 /* Hero section with navigation */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/hero/heroDarker3.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/hero/heroDarker3.webp');
     background-size: cover;
     background-position: center;
     min-height: 500px;
@@ -705,7 +705,7 @@ footer {
 
 /* Error page */
 .error-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/hero/heroDarker3.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/hero/heroDarker3.webp');
 }
 
 .error-icon {

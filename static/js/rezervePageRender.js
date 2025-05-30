@@ -47,7 +47,7 @@ document.getElementsByClassName("price-display")[0].innerHTML = `CENA: ${auto.di
 
 cartitle.innerHTML = auto.displayName
 for (let i = 0; i < obrazky.length; i++) {
-    obrazky[i].style.backgroundImage = `url(/img/auta/${auto.debugName}/${i + 1}.png)`
+    obrazky[i].style.backgroundImage = `url(/img/auta/${auto.debugName}/${i + 1}.webp)`
 }
 
 m1Input.addEventListener("change",(event) => {
