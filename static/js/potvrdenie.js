@@ -217,7 +217,7 @@ submitButton.addEventListener("click",async (e) => {
             }
         }
     } else {
-        const result = await fetch("http://localhost:3500/posliObjednavku",{
+        const result = await fetch("https://pozicovnaaut-production.up.railway.app/posliObjednavku",{
             method: "POST",
             headers: { "Content-type" : "application/json" },
             body: JSON.stringify(data)
