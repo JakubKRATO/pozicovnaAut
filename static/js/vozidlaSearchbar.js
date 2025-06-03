@@ -1,3 +1,5 @@
+import renderVehicles from "./vozidlaRender.js"
+
 const slider = document.getElementById('slider');
 const buttons = document.querySelectorAll('.filter-btn');
 
@@ -16,9 +18,10 @@ function moveSliderTo(button) {
 
 buttons.forEach(btn => {
   btn.addEventListener('click',async () => {
-
+    
     if (btn.classList.contains("active")) {
       slider.style.visibility = "hidden"
+      renderVehicles.renderVehicles(null)
       await sleep(500)
       btn.classList.remove("active")
       return;
@@ -27,8 +30,9 @@ buttons.forEach(btn => {
     buttons.forEach(b => b.classList.remove('active'));
     slider.style.visibility = "visible"
     btn.classList.add('active');
+    let trieda = btn.attributes["data-trieda"].value
+    renderVehicles.renderVehicles(trieda)
     moveSliderTo(btn);
-    
   });
 });
 
