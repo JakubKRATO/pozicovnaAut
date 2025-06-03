@@ -229,11 +229,19 @@
     .filter-wrapper {
       padding: 0.2rem;
       gap: .2rem;
-      width: 90vw;
+      width: 95vw;
     }
     .filter-btn {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.8rem;
+    }
+    .slider {
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 70%;
+        border-radius: 999px;
+        transition: all 0.3s ease;
     }
 } 
 
