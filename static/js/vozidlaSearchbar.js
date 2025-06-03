@@ -12,6 +12,7 @@ function moveSliderTo(button) {
   const rect = button.getBoundingClientRect();
   const wrapperRect = button.parentElement.getBoundingClientRect();
   
+  
   slider.style.width = rect.width + 'px';
   slider.style.transform = `translateX(${rect.left - wrapperRect.left}px)`;
 }

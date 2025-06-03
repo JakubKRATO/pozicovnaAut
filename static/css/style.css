@@ -754,42 +754,7 @@ footer {
     justify-content: center;
     width: 100%;
 }
-.filter-wrapper {
-  position: relative;
-  background: #393939;
-  padding: 0.5rem;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: fit-content;
-}
-.filter-btn {
-  position: relative;
-  background: none;
-  border: none;
-  color: white;
-  padding: 0.9rem 1.6rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 1;
-  transform: all 0.3s;
-}
-.filter-btn:not(.active):hover {
-    transform: all 0.3s;
-    background-color: #1b1b1b;
-}
-.slider {
-  position: absolute;
-  left: 0;
-  width: 0;
-  height: 90%;
-  background: #9B0000;
-  border-radius: 999px;
-  transition: all 0.3s ease;
-  z-index: 0;
-}
+
 .hidden {
     visibility: hidden;
 }

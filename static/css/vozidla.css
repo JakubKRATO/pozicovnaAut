@@ -1,35 +1,3 @@
-.alignPrice {
-    display: flex;
-    align-items: center;
-    width: auto;
-    justify-content: flex-start;
-    width: 100%;
-
-}
-.info {
-    transition: all 0.3s;
-    margin-left: 8px;
-    max-width: 20px;
-    max-height: 20px;
-    stroke: var(--primary-color);          /* muted red like other icons */
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    cursor: pointer;
-    vertical-align: middle;
-    border-radius: 99px;
-}
-
-.info:hover {
-    transition: all 0.3s;
-    transform: scale(1.15);
-}
-
-
-
-
-
 /* Hlavička stránky */
 .page-header {
     background: var(--primary-color);
@@ -62,43 +30,43 @@
 }
 
 /* Filtre */
-.filters {
-    padding: 2rem 0;
-    background: #121212;
+.filter-wrapper {
+  position: relative;
+  background: #393939;
+  padding: 0.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+}
+.filter-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1;
+  transform: all 0.3s;
+}
+.filter-btn:not(.active):hover {
+    transform: all 0.3s;
+    background-color: #1b1b1b;
+}
+.slider {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 90%;
+  background: #9B0000;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  z-index: 0;
 }
 
-.filter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.filter-group label {
-    color: #ffffff;
-    font-weight: 500;
-}
-
-.filter-group select {
-    padding: 0.8rem;
-    border: 1px solid #333333;
-    border-radius: 4px;
-    background: #1e1e1e;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.filter-group select:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(155, 0, 0, 0.2);
-}
 
 /* Katalóg vozidiel */
 .vehicles {
@@ -213,7 +181,7 @@
 }
 
 /* Responzívny dizajn */
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .page-header {
         padding: 3rem 0 1.5rem;
     }
@@ -240,9 +208,32 @@
         gap: 1rem;
         text-align: center;
     }
-
     .vehicle-price .btn {
         width: 100%;
+    }
+    .filter-wrapper {
+        margin-top: 20px;
+    }
+} 
+@media (max-width: 690px) {
+    .filter-wrapper {
+      padding: 0.5rem;
+      gap: .5rem;
+      width: 90vw;
+    }
+    .filter-btn {
+      font-size: 0.8rem;
+    }
+} 
+@media (max-width: 620px) {
+    .filter-wrapper {
+      padding: 0.2rem;
+      gap: .2rem;
+      width: 90vw;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.5rem;
     }
 } 
 
