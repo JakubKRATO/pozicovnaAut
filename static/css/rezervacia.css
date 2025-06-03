@@ -267,11 +267,15 @@ body {
 }
 
 .price-display {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--white);
     margin: 2rem 0;
-    text-align: center;
 }
 
 .btn-reserve {
@@ -439,6 +443,18 @@ footer {
 .hidden {
     visibility: hidden ;
 }
+svg {
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #6B0000;
+    height: 20px;
+    width: 20px;
+}
+svg:hover {
+    transition: all 0.3s;
+    color: #9B0000;
+    scale: 1.2;
+}
 .back-button {
     position: relative;
     z-index: 99999999;
@@ -463,6 +479,66 @@ footer {
 
 .back-button:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+.moneyTable-container {
+    background-color: #0000006b;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999999;
+}
+.moneyTable-container .table {
+    position: relative;
+    width: 600px;
+    border-radius: 15px;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+}
+.table h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #333;
+}
+
+.table th {
+  background-color: #222;
+  font-weight: bold;
+}
+.close-btn {
+    transition: all 0.3s;
+    background-color: transparent;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.close-btn:hover {
+    font-weight: bold;
+    scale: 1.2;
+    transition: all 0.3s;
+    color: #9b0000e6;
 }
 @media (max-width: 538px) {
     .thumbnail {
@@ -500,3 +576,6 @@ footer {
         height: 69px;
     }
 } 
+.hide {
+    display: none;
+}

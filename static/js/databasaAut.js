@@ -45,7 +45,7 @@ const auta = [
             limit: 200
         },
         zaloha: 1000,
-        kategorie: ["Luxusné","SUV"],
+        kategorie: ["Luxusné"],
         prevodovka: "Automatická",
         palivo: "Nafta",
         pocetMiest: 4,

@@ -1,19 +1,39 @@
-const minPriceInput = document.getElementById("min-price")
-const maxPriceInput = document.getElementById("max-price")
-const typVozidlaInput = document.getElementById("car-type")
-const buton = document.getElementById("hladat")
-const vozidlaContainer = document.getElementsByClassName("vehicles-grid")[0]
+const slider = document.getElementById('slider');
+const buttons = document.querySelectorAll('.filter-btn');
 
-buton.addEventListener("click",(e) => {
-    console.log("done");
-    e.preventDefault()
-    let data = {
-        minPrice: parseInt(minPriceInput.value),
-        maxPrice: parseInt(maxPriceInput.value),
-        typVozidla: typVozidlaInput.value
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+function moveSliderTo(button) {
+
+  const rect = button.getBoundingClientRect();
+  const wrapperRect = button.parentElement.getBoundingClientRect();
+  
+  slider.style.width = rect.width + 'px';
+  slider.style.transform = `translateX(${rect.left - wrapperRect.left}px)`;
+}
+
+buttons.forEach(btn => {
+  btn.addEventListener('click',async () => {
+
+    if (btn.classList.contains("active")) {
+      slider.style.visibility = "hidden"
+      await sleep(500)
+      btn.classList.remove("active")
+      return;
     }
-    // if (isNaN(data.minPrice) || isNaN(data.maxPrice)) {
-    //     return;
-    // }
-    window.location.href = `/vozidla?min=${data.minPrice}&max=${data.maxPrice}&typ=${data.typVozidla}`
-})
+    
+    buttons.forEach(b => b.classList.remove('active'));
+    slider.style.visibility = "visible"
+    btn.classList.add('active');
+    moveSliderTo(btn);
+    
+  });
+});
+
+// Initialize on first load
+window.addEventListener('load', () => {
+  const active = document.querySelector('.filter-btn.active');
+  if (active) moveSliderTo(active);
+});

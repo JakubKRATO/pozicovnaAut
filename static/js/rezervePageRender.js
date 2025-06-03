@@ -7,7 +7,8 @@ sessionStorage.setItem("id",id)
 
 const mobil = window.innerWidth < 750
 
-console.log(mobil);
+var tabulkaCon = document.getElementsByClassName("table")[0];
+var TableContainerGUI = document.getElementsByClassName("moneyTable-container")[0]
 
 var pismeno;
 
@@ -43,7 +44,6 @@ document.getElementById("prevodovka").innerHTML = `<span id="prevodovka"><i clas
 document.getElementById("palivo").innerHTML = `<span id="palivo"><i class="fas fa-gas-pump"></i> ${auto.palivo}</span>`
 document.getElementById("miesta").innerHTML = `<span id="miesta"><i class="fas fa-users"></i> ${auto.pocetMiest} miest${pismeno}</span>`
 document.getElementById("typ").innerHTML = `<span id="typ"><i class="fas fa-car"></i> ${auto.kategorie}</span>`
-document.getElementsByClassName("price-display")[0].innerHTML = `CENA: ${auto.displayPrice} €/deň`
 
 cartitle.innerHTML = auto.displayName
 for (let i = 0; i < obrazky.length; i++) {
@@ -141,3 +141,88 @@ submitButton.addEventListener("click",() => {
   }
   window.location.href = "/potvrdenie"
 });
+
+const renderTable = () => {
+  let typ = auto.typTabulky
+  console.log(typ);
+  if (typ === 1) {
+    tabulkaCon.innerHTML = `<button class="close-btn">✕</button>
+    <h3>Cenník - ${auto.displayName}</h3>
+    <table>
+    <thead>
+    <tr><th>Dĺžka prenájmu</th><th>Cena / deň</th><th>Limit km / deň</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>1 deň</td><td>${auto.jeden.cena} €</td><td>300 km</td></tr>
+    <tr><td>2 - 3 dni</td><td>${auto.dvaTri.cena} €</td><td>300 km</td></tr>
+    <tr><td>4 - 7 dní</td><td>${auto.styriSedem.cena} €</td><td>250 km</td></tr>
+    <tr><td>8 - 14 dní</td><td>${auto.osemStrnast.cena} €</td><td>250 km</td></tr>
+    <tr><td>15 - 30 dní</td><td>${auto.patnastTridsat.cena} €</td><td>200 km</td></tr>
+    </tbody>
+    </table>`;
+  } else if (typ === 2) {
+    // No content yet for typ 2
+  } else if (typ === 3) {
+    tabulkaCon.innerHTML = `<button class="close-btn">✕</button>
+    <h3>Cenník - ${auto.displayName}</h3>
+    <table>
+    <thead>
+    <tr><th>Dĺžka prenájmu</th><th>Cena / deň</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>1 - 3 dni</td><td>${auto.jedenTri.cena} €</td></tr>
+    <tr><td>4 - 6 dní</td><td>${auto.styriSest.cena} €</td></tr>
+    <tr><td>7 - 29 dní</td><td>${auto.sedemDvadsatdevat.cena} €</td></tr>
+    </tbody>
+    </table>`;
+  } else if (typ === 4) {
+      tabulkaCon.innerHTML = `<button class="close-btn">✕</button>
+      <h3>Cenník - [Názov vozidla]</h3>
+      <table>
+      <thead>
+      <tr>
+      <th>Limit km</th>
+      <th>1 - 3 dní</th>
+      <th>4 - 10 dní</th>
+      <th>11 - 20 dní</th>
+      <th>21 - 30 dní</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><td>150</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+      <tr><td>200</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+      <tr><td>150</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+      <tr><td>150</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+      <tr><td>200</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+      </tbody>
+      </table>`;
+  } else if (typ === 5) {
+    tabulkaCon.innerHTML = `<button class="close-btn">✕</button>
+    <h3>Cenník - ${auto.displayName}</h3>
+    <table>
+    <thead>
+    <tr><th>Dĺžka prenájmu</th><th>Cena / deň</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>1 - 3 dni</td><td>${auto.jednaTri} €</td></tr>
+    <tr><td>4 - 10 dní</td><td>${auto.styriDesat} €</td></tr>
+    <tr><td>11 - 20 dní</td><td>${auto.jedenastDvadsat} €</td></tr>
+    <tr><td>21 - 30 dní</td><td>${auto.dvadsatjednaTridsat} €</td></tr>
+    </tbody>
+    </table>`;
+  };
+};
+
+document.getElementsByClassName("info")[0].addEventListener("click",() => {
+  console.log("click")
+    if (TableContainerGUI.classList.contains("hide")) {
+      TableContainerGUI.classList.remove("hide");
+      renderTable()
+      document.getElementsByClassName("close-btn")[0].addEventListener("click", closeMenu);
+    }
+});
+const closeMenu = () => {
+  if (!TableContainerGUI.classList.contains("hide")) {
+    TableContainerGUI.classList.add("hide")
+  }
+};

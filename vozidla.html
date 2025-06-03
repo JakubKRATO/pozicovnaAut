@@ -56,68 +56,16 @@
             <p>Vyberte si z našej širokej ponuky kvalitných vozidiel</p>
         </div>
     </section>
-
-    <!-- Vyhľadávací formulár -->
-    <section class="search-section">
-        <div class="container">
-<form class="search-form" id="filter-form">
-  <!-- Min cena -->
-  <div class="form-group custom-number">
-    <label for="min-price">Minimálna cena (40€)</label>
-    <div class="number-input">
-      <input type="number" id="min-price" name="min-price" min="40" max="90" value="40" step="1">
-      <div class="spinner-controls">
-        <button type="button" class="spinner-up" 
-          onmousedown="startStepping('min-price', 1)" 
-          onmouseup="stopStepping()" 
-          onmouseleave="stopStepping()">▲</button>
-        <button type="button" class="spinner-down" 
-          onmousedown="startStepping('min-price', -1)" 
-          onmouseup="stopStepping()" 
-          onmouseleave="stopStepping()">▼</button>
+    <section class="triedenie">
+      <div class="filter-wrapper">
+        <div class="slider" id="slider"></div>
+          <button class="filter-btn">Luxusné</button>
+          <button class="filter-btn">Športové</button>
+          <button class="filter-btn">SUV</button>
+          <button class="filter-btn">Viac miestne</button>
+          <button class="filter-btn">Komerčné</button>
       </div>
-    </div>
-  </div>
-
-  <!-- Max cena -->
-  <div class="form-group custom-number">
-    <label for="max-price">Maximálna cena (90€)</label>
-    <div class="number-input">
-      <input type="number" id="max-price" name="max-price" min="40" max="90" value="90" step="1">
-      <div class="spinner-controls">
-        <button type="button" class="spinner-up" 
-          onmousedown="startStepping('max-price', 1)" 
-          onmouseup="stopStepping()" 
-          onmouseleave="stopStepping()">▲</button>
-        <button type="button" class="spinner-down" 
-          onmousedown="startStepping('max-price', -1)" 
-          onmouseup="stopStepping()" 
-          onmouseleave="stopStepping()">▼</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Typ vozidla -->
-  <div class="form-group">
-    <label for="car-type">Typ vozidla</label>
-    <select id="car-type">
-      <option value="">Všetky typy</option>
-      <option value="Viacmiestne">Viac miestne</option>
-      <option value="SUV">SUV</option>
-      <option value="Luxusné">Luxusné</option>
-      <option value="Športové">Športové</option>
-      <option value="Komerčné">Komerčné</option>
-    </select>
-  </div>
-
-  <!-- Tlačidlá -->
-  <button type="submit" class="btn btn-primary" id="hladat">Vyhľadať</button>
-  <button type="button" class="btn btn-secondary" id="resetFilter">Resetovať filtre</button>
-</form>
-
-        </div>
     </section>
-
     <!-- Katalóg vozidiel -->
     <section class="vehicles">
         <div class="container">
@@ -166,5 +114,37 @@
     <script src="js/navigation.js"></script>
     <script src="js/vozidlaSearchbar.js"></script>
     <script src="js/resetFilters.js"></script>
+    <script>
+  const slider = document.getElementById('slider');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  function moveSliderTo(button) {
+    const rect = button.getBoundingClientRect();
+    const wrapperRect = button.parentElement.getBoundingClientRect();
+
+    slider.style.width = rect.width + 'px';
+    slider.style.transform = `translateX(${rect.left - wrapperRect.left}px)`;
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains("active")) {
+        btn.classList.remove("active")
+        slider.style.visibility = "hidden"
+        return;
+      }
+      buttons.forEach(b => b.classList.remove('active'));
+      slider.style.visibility = "visible"
+      btn.classList.add('active');
+      moveSliderTo(btn);
+    });
+  });
+
+  // Initialize on first load
+  window.addEventListener('load', () => {
+    const active = document.querySelector('.filter-btn.active');
+    if (active) moveSliderTo(active);
+  });
+</script>
 </body>
 </html> 
