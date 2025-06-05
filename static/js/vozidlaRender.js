@@ -6,6 +6,8 @@ const params = new URLSearchParams(window.location.search);
 const typVozidla = params.get("typ")
 if (!typVozidla) {
     noType = false
+} else {
+  document.querySelector(`button[data-trieda=${typVozidla}]`).classList.add("active")
 }
 
 var vehicleContainer = document.getElementsByClassName("vehicles-grid")[0];

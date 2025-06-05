@@ -314,9 +314,41 @@ h1 {
 }
 
 /* Car Types */
-.carTypes {
-    height: 10rem;
+.containerForTypes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
+.carTypes {
+    width: 1400px;
+    flex-wrap: wrap;
+    padding: 2rem;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+.carType {
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.21);
+    border-radius: 21px;
+    width: 377px;
+    height: fit-content;
+    background-color: #0F0F0F;
+    border: 3px solid #1A1A1A;
+    text-align: center;
+}
+.carType img {
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    transform: translateX(-2px);
+    border-radius: 20px;
+    width: 377px;
+}
+.carType p {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
 
 /* Výhody */
 .benefits {
