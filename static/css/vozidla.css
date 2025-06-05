@@ -12,27 +12,10 @@
     margin-bottom: 1rem;
 }
 
-/* SEARCH BAR */
-.btn-secondary {
-  background: transparent;
-  border: 2px solid #9B0000;
-  color: #ffffff;
-  padding: 14px 24px;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #9B0000;
-  color: #fff;
-}
-
 /* Filtre */
 .filter-wrapper {
   position: relative;
-  background: #393939;
+  background: #1e1e1e;
   padding: 0.5rem;
   border-radius: 50px;
   display: flex;
@@ -54,7 +37,7 @@
 }
 .filter-btn:not(.active):hover {
     transform: all 0.3s;
-    background-color: #1b1b1b;
+    background-color: #0c0c0c;
 }
 .slider {
   position: absolute;
@@ -244,7 +227,6 @@
         transition: all 0.3s ease;
     }
 } 
-
 
 footer {
     border-top: 1px solid #333;

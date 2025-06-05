@@ -12,8 +12,6 @@ var vehicleContainer = document.getElementsByClassName("vehicles-grid")[0];
 
 var pismeno;
 const renderVehicles = (typ) => {
-  console.log(typ);
-  
   var newAuta;
   if (typ) {
       newAuta = auta.filter(a => a.kategorie.includes(typ))
@@ -21,6 +19,11 @@ const renderVehicles = (typ) => {
     newAuta = auta
   }
   vehicleContainer.innerHTML = ''
+  if (newAuta.length < 1) {
+    vehicleContainer.innerHTML = `<h1>Momentálne nemáme žiadne auto v tejto kategórii. Skúste neskôr!</h1>`
+
+    return;
+  }
   for (let i = 0; i < newAuta.length; i++) {
     
     if (newAuta[i].pocetMiest == 4) {
