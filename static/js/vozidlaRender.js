@@ -4,6 +4,7 @@ var noType = true
 
 const params = new URLSearchParams(window.location.search);
 const typVozidla = params.get("typ")
+console.log(typVozidla);
 if (!typVozidla) {
     noType = false
 } else {
@@ -14,7 +15,7 @@ var vehicleContainer = document.getElementsByClassName("vehicles-grid")[0];
 
 var pismeno;
 const renderVehicles = (typ) => {
-  
+
   var newAuta;
   if (typ) {
       newAuta = auta.filter(a => a.kategorie.includes(typ))
