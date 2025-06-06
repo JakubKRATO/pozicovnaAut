@@ -14,6 +14,7 @@ var vehicleContainer = document.getElementsByClassName("vehicles-grid")[0];
 
 var pismeno;
 const renderVehicles = (typ) => {
+  
   var newAuta;
   if (typ) {
       newAuta = auta.filter(a => a.kategorie.includes(typ))
