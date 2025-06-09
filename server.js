@@ -1,11 +1,13 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import mail from "./sendMail.js"
+import mail from "./sendMail.js";
+import axios from 'axios';
 
 
 // https://pozicovnaaut-production.up.railway.app
 // http://localhost:3500
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -58,18 +60,41 @@ app.get('/faq', (req, res) => {
     res.sendFile(path.join(__dirname, 'faq.html'));
 });
 
-app.post("/posliObjednavku",(req,res) => {
-    const statusClient = mail.sendMailClient(req.body)
-    if (!statusClient) {
+app.post("/posliObjednavku",async (req,res) => {
+    const captchaToken = req.body.captchaToken
+    const secretKey = process.env.SITE_SECRET
+
+    if (!captchaToken) {
+        return res.status(400).json({message: "Prosím potvrďte, že nieste robot."})
+    }
+    try {
+        const response = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null, {
+            params: {
+                secret: secretKey,
+                response: captchaToken,
+            },
+        });
+        const data = response.data
+        
+        if (!data.success) {
+            return res.status(403).json({ message: "reCAPTCHA zlyhal." });
+        }
+        
+        const statusClient = mail.sendMailClient(req.body)
+        if (!statusClient) {
+            res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
+            return
+        }
+        const statusAdmin = mail.sendMailAdmin(req.body)
+        if (statusAdmin) {
+            res.status(200).json({message: "success"})
+            return
+        }
         res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
-        return
+    } catch (error) {
+        console.log(error);
+        
     }
-    const statusAdmin = mail.sendMailAdmin(req.body)
-    if (statusAdmin) {
-        res.status(200).json({message: "success"})
-        return
-    }
-    res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
 });
 app.post("/supportMail",(req,res) => {
     const statusMessage = mail.sendSupportMail(req.body)

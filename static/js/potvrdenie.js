@@ -217,6 +217,14 @@ submitButton.addEventListener("click",async (e) => {
             }
         }
     } else {
+        const captchaToken = grecaptcha.getResponse();
+
+        if (!captchaToken) {
+            alert("Prosím, potvrďte, že nie ste robot.");
+            return;
+        }
+        data['captchaToken'] = captchaToken;
+
         const result = await fetch("https://pozicovnaaut-production.up.railway.app/posliObjednavku",{
             method: "POST",
             headers: { "Content-type" : "application/json" },
