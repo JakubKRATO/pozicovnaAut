@@ -18,6 +18,32 @@ const PORT = process.env.PORT || 3500;
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.json());
 
+const captchaCheck = async (req,res,next) => {
+    try {
+        const captchaToken = req.body.captchaToken
+        const secretKey = process.env.SITE_SECRET
+    
+        if (!captchaToken) {
+            return res.status(400).json({message: "Prosím potvrďte, že nie ste robot."})
+        }
+        const response = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null, {
+            params: {
+                secret: secretKey,
+                response: captchaToken,
+            },
+        });
+        const data = response.data
+            
+        if (!data.success) {
+            return res.status(403).json({ message: "reCAPTCHA zlyhal." });
+        }
+        console.log("Captcha has been solved");
+        next()
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 // Serve robots.txt and sitemap.xml
 app.get('/robots.txt', (req, res) => {
     res.sendFile(path.join(__dirname, 'robots.txt'));
@@ -60,26 +86,8 @@ app.get('/faq', (req, res) => {
     res.sendFile(path.join(__dirname, 'faq.html'));
 });
 
-app.post("/posliObjednavku",async (req,res) => {
-    const captchaToken = req.body.captchaToken
-    const secretKey = process.env.SITE_SECRET
-
-    if (!captchaToken) {
-        return res.status(400).json({message: "Prosím potvrďte, že nieste robot."})
-    }
+app.post("/posliObjednavku",captchaCheck,async (req,res) => {
     try {
-        const response = await axios.post(`https://www.google.com/recaptcha/api/siteverify`, null, {
-            params: {
-                secret: secretKey,
-                response: captchaToken,
-            },
-        });
-        const data = response.data
-        
-        if (!data.success) {
-            return res.status(403).json({ message: "reCAPTCHA zlyhal." });
-        }
-        
         const statusClient = mail.sendMailClient(req.body)
         if (!statusClient) {
             res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
@@ -93,10 +101,9 @@ app.post("/posliObjednavku",async (req,res) => {
         res.status(500).json({message: "Internal server error, skúste znova neskôr alebo nás kontaktujte!"})
     } catch (error) {
         console.log(error);
-        
     }
 });
-app.post("/supportMail",(req,res) => {
+app.post("/supportMail",captchaCheck,(req,res) => {
     const statusMessage = mail.sendSupportMail(req.body)
     if (!statusMessage) {
         res.status(500).json({message: "Zas niečo nejde. Chyba servera (500)"})

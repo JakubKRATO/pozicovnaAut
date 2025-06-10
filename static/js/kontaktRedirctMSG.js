@@ -21,6 +21,14 @@ document.getElementById("contactForm").addEventListener("submit",async (e) => {
         predmet: document.getElementById("subject").value,
         message: document.getElementById("message").value,
     }
+    const captchaToken = grecaptcha.getResponse();
+    console.log(captchaToken);
+    if (!captchaToken) {
+        alert("Prosím, potvrďte, že nie ste robot.");
+        return;
+    }
+    data['captchaToken'] = captchaToken;
+
     let response = await fetch("https://pozicovnaaut-production.up.railway.app/supportMail",{
         method: "POST",
         headers: { "Content-type" : "application/json" },
