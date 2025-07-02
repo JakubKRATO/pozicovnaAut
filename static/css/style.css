@@ -166,6 +166,7 @@ header {
 
 .mobile-nav .nav-links a:hover {
     color: #9B0000;
+    color: rgb(107, 0, 0);
 }
 
 /* Overlay pre mobile menu */
