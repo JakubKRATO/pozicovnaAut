@@ -52,7 +52,7 @@
     <div class="wrapper">
         <main>
             <h3>Kto sme?</h3>
-            <p>FFcars je moderná autopožičovňa, ktorá spája rýchlosť, spoľahlivosť a férové ceny pre každého.  Prenájom auta u nás je rýchly a jednoduchý, bez zbytočných papierovačiek a komplikácií.</p>
+            <p class="subtext">FFcars je moderná autopožičovňa, ktorá spája rýchlosť, spoľahlivosť a férové ceny pre každého. Prenájom auta u nás je rýchly a jednoduchý, bez zbytočných papierovačiek a komplikácií.</p>
             <div class="wrapper-mini">
                 <div class="card">
                     <svg width="64px" height="64px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#800000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#4200008d" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.20404 15C3.43827 15.5883 3 16.2714 3 17C3 19.2091 7.02944 21 12 21C16.9706 21 21 19.2091 21 17C21 16.2714 20.5617 15.5883 19.796 15M12 6.5V11.5M9.5 9H14.5M18 9.22222C18 12.6587 15.3137 15.4444 12 17C8.68629 15.4444 6 12.6587 6 9.22222C6 5.78578 8.68629 3 12 3C15.3137 3 18 5.78578 18 9.22222Z" stroke="#800000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
@@ -67,11 +67,15 @@
             </div>
             <h5>Disponujeme novými a pravidelne servisovanými vozidlami v rôznych kategóriách:</h5>
             <div class="carousel">
-                <div class="item" style="--poradie: 1; background-image: url(/img/onas/luxusne.png);">Luxusné</div>
-                <div class="item" style="--poradie: 2; background-image: url(/img/onas/viacmiestne.png);">Viac miestne</div>
-                <div class="item" style="--poradie: 3; background-image: url(/img/onas/sportove.png);">Športové</div>
-                <div class="item" style="--poradie: 4; background-image: url(/img/onas/suv.png);">SUV</div>
-                <div class="item" style="--poradie: 5; background-image: url(/img/onas/komercne.png);">Komerčné</div>
+                <a href="/vozidla?typ=Luxusné"><div class="item" style="--poradie: 1; background-image: url(/img/onas/luxusne.png);">Luxusné</div></a>
+                <a href="/vozidla?typ=Viacmiestne"><div class="item" style="--poradie: 2; background-image: url(/img/onas/viacmiestne.png);">Viac miestne</div></a>
+                <a href="/vozidla?typ=Športové"><div class="item" style="--poradie: 3; background-image: url(/img/onas/sportove.png);">Športové</div></a>
+                <a href="/vozidla?typ=SUV"><div class="item" style="--poradie: 4; background-image: url(/img/onas/suv.png);">SUV</div></a>
+                <a href="/vozidla?typ=Komerčné"><div class="item" style="--poradie: 5; background-image: url(/img/onas/komercne.png);">Komerčné</div></a>
+            </div>
+            <div class="block">
+                <img src="img/onas/star.png" alt="" class="star">
+                <p>V cene prenájmu je zahrnuté základné poistenie a asistenčné služby, pričom ceny sú transparentné, bez skrytých poplatkov.</p>
             </div>
         </main>
     </div>
@@ -84,7 +88,7 @@
                     <p><i class="fas fa-phone"></i> +421 948 158 119</p>
                     <p><i class="fas fa-phone"></i> +421 948 344 126</p>
                     <p><i class="fas fa-envelope"></i> objednavky.ffcars@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Lermontovova 911/3 811 05 Bratislava - mestská časť Staré Mesto</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lermontovova 911/3, 811 05 Bratislava - mestská časť Staré Mesto</p>
                 </div>
                 <div class="footer-section">
                     <h4>Rýchle odkazy</h4>
@@ -110,6 +114,7 @@
         </div>
     </footer>
     <script src="js/navigation.js"></script>
+    <script src="js/carouselStop.js"></script>
 </body>
 </html> 
     <!-- <section class="history">
